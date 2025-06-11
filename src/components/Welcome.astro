@@ -1,20 +1,17 @@
 ---
 import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
+import HeaderLayout from "../layouts/Header.astro";
 ---
 
-<div id="header">
-  <p><a href="/About">About Me</a></p>
-  <p>Portfolio</p>
-  <h1 class="header_name">Maddie Nowosielski</h1>
-  <p>Blog</p>
-  <p>Github</p>
-</div>
-
+<HeaderLayout>
+  <div>HI</div>
+</HeaderLayout>
 <style>
   @font-face {
     font-family: "cute";
-    src: url("/src/assets/Savate/Savate-VariableFont_wght.ttf") format("truetype");
+    src: url("/src/assets/Savate/Savate-VariableFont_wght.ttf")
+      format("truetype");
   }
   #header {
     font-family: "cute";
@@ -39,14 +36,10 @@ import background from "../assets/background.svg";
     justify-content: center;
   }
 
-
   h1 {
     font-size: 22px;
     margin-top: 0.25em;
   }
-
-
-
 
   @media screen and (max-height: 368px) {
     #news {
