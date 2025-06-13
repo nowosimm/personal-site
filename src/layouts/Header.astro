@@ -1,14 +1,12 @@
-
 ---
 
 ---
-
 <div id="header">
-  <p><a href="/About">About Me</a></p>
-  <p><a href="/Portfolio">Portfolio</a></p>
+  <p><a href="/About" class="links">About Me</a></p>
+  <p><a href="/Projects" class="links">Projects</a></p>
   <h1 class="header_name">Maddie Nowosielski</h1>
-  <p><a href="/Blog">Blog</a></p>
-  <p><a href="/Github">Github</a></p>
+  <p><a href="/Blog" class="links">Blog</a></p>
+  <p><a href="/Github" class="links">Github</a></p>
 </div>
 
 <style>
@@ -17,6 +15,10 @@
     src: url("/src/assets/Savate/Savate-VariableFont_wght.ttf")
       format("truetype");
   }
+
+  body {
+    font-family: "cute";
+  }
   #header {
     font-family: "cute";
     display: flex;
@@ -24,6 +26,7 @@
     align-items: center;
     background-color: #f0f6ee;
   }
+
   .header_name {
     background-color: #d3e3d0;
     height: 70px;
@@ -33,8 +36,29 @@
     align-items: center;
     justify-content: center;
   }
-    h1 {
+  h1 {
     font-size: 22px;
     margin-top: 0.25em;
+  }
+
+  .links {
+    text-decoration: none;
+        color: black;
+  }
+
+  .links:visited {
+    color: black;
+  }
+  .links:hover {
+    color: #899487;
+    background-color: #f0f6ee;
+    border-radius: 5px;
+  }
+  body {
+    background-size: 20px 20px; /* Size of the grid cells */
+    background-image:
+      linear-gradient(to right, rgb(231, 231, 231) 1px, transparent 1px),
+      /* Vertical lines */
+        linear-gradient(to bottom, rgb(231, 231, 231) 1px, transparent 1px); /* Horizontal lines */
   }
 </style>
