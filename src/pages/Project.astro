@@ -1,0 +1,61 @@
+---
+import HeaderLayout from "../layouts/Header.astro";
+import "../styles/global.css";
+import fillerImage from "../components/images/projectImages/filler.jpeg";
+import stardew from "../components/images/projectImages/Stardew.png";
+import memory from "../components/images/projectImages/memory.png";
+
+const projects = [
+  {
+    title: "Craft Tracker",
+    image: fillerImage,
+    link: "craft-tracker",
+  },
+  { title: "Memory Game", image: memory, link: "memory-game" },
+  {
+    title: "Stardew Valley Guide",
+    image: stardew,
+    link: "stardew-guide",
+  },
+  { title: "Mock Blog", image: fillerImage, link: "mock-blog" },
+  { title: "To-Do List", image: fillerImage, link: "to-do" },
+  {
+    title: "Etch-a-Sketch",
+    image: fillerImage,
+    link: "etch-a-sketch",
+  },
+  { title: "Weather App", image: fillerImage, link: "weather-app" },
+  {
+    title: "Shopping Cart",
+    image: fillerImage,
+    link: "shopping-cart",
+  },
+  {
+    title: "Resume Builder",
+    image: fillerImage,
+    link: "resume-builder",
+  },
+  { title: "Rock Paper Scissors", image: fillerImage, link: "rock-paper-scissors" },
+];
+---
+
+<HeaderLayout title="About Me">
+  <!-- header -->
+</HeaderLayout>
+
+<div class="grid grid-cols-1 gap-9 m-10 xl:grid-cols-3 md:grid-cols-2" >
+  {
+    projects.map((p) => (
+      <a href={`/Project/${p.link}`} class="links">
+        <div
+          class="flex justify-center items-center bg-cover bg-center h-80 rounded-xl shadow-md hover:scale-105 transition-transform duration-400 ease-in-out"
+          style={`background-image: url(${p.image.src});`}
+        >
+          <div class="my-7 p-4 rounded">
+            <p>{p.title}</p>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>
