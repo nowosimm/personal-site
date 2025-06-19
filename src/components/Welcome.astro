@@ -2,79 +2,104 @@
 import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
 import HeaderLayout from "../layouts/Header.astro";
+import fillerImage from "../components/images/filler_image.png";
+import { Image } from "astro:assets";
 ---
 
-<HeaderLayout>
-  <div>HI</div>
-</HeaderLayout>
-<style>
-  @font-face {
-    font-family: "cute";
-    src: url("/src/assets/Savate/Savate-VariableFont_wght.ttf")
-      format("truetype");
-  }
-  #header {
-    font-family: "cute";
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f0f6ee;
-  }
-  .header_name {
-    background-color: #d3e3d0;
-    height: 70px;
-    width: 300px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+<div>
+  <HeaderLayout title="About Me" cl>
+    <!-- header -->
+  </HeaderLayout>
+  <div class="flex flex-col justify-center align-middle">
+    <div class="flex align-middle justify-center">
+      <Image
+        src={fillerImage}
+        class="w-md h-auto shadow-md rounded-md flex justify-center align-middle"
+        alt="Welcome image of me standing in front of Lake Michigan"
+      />
+      <div class="ml-8">
+        <h1> Welcome to my page</h1>
+      </div>
+    </div>
 
-  main {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-  }
+    <div class="flex gap-5 m-5 justify-center align-middle">
+      <h2 class="bg-gray-100 px-3 py-1 rounded-lg shadow-sm">Contact:</h2>
+      <p class="bg-gray-100 px-3 py-1 rounded-lg shadow-sm">
+        madisonmnowosielski@gmail.com
+      </p>
+      <p class="bg-gray-100 px-3 py-1 rounded-lg shadow-sm">734-972-3206</p>
+    </div>
+  </div>
 
-  h1 {
-    font-size: 22px;
-    margin-top: 0.25em;
-  }
-
-  @media screen and (max-height: 368px) {
-    #news {
-      display: none;
+  <style>
+    @font-face {
+      font-family: "cute";
+      src: url("/src/assets/Savate/Savate-VariableFont_wght.ttf")
+        format("truetype");
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    #container {
+    #header {
+      font-family: "cute";
       display: flex;
-      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f0f6ee;
+    }
+    .header_name {
+      background-color: #d3e3d0;
+      height: 70px;
+      width: 300px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    #hero {
-      display: block;
-      padding-top: 10%;
-    }
-
-    #links {
-      flex-wrap: wrap;
-    }
-
-    #links a.button {
-      padding: 14px 18px;
-    }
-
-    #news {
-      right: 16px;
-      left: 16px;
-      bottom: 2.5rem;
-      max-width: 100%;
+    main {
+      height: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     h1 {
-      line-height: 1.5;
+      font-size: 22px;
+      margin-top: 0.25em;
     }
-  }
-</style>
+
+    @media screen and (max-height: 368px) {
+      #news {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #hero {
+        display: block;
+        padding-top: 10%;
+      }
+
+      #links {
+        flex-wrap: wrap;
+      }
+
+      #links a.button {
+        padding: 14px 18px;
+      }
+
+      #news {
+        right: 16px;
+        left: 16px;
+        bottom: 2.5rem;
+        max-width: 100%;
+      }
+
+      h1 {
+        line-height: 1.5;
+      }
+    }
+  </style>
+</div>

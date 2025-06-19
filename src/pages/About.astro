@@ -4,6 +4,8 @@ import { Image } from "astro:assets";
 import aboutMeImage from "../components/images/aboutMe.jpg";
 import runningImage from "../components/images/running.jpeg";
 import cincinnatiImage from "../components/images/cincinnati.jpeg";
+import hobbies from "../components/images/hobbies.jpg";
+import minis from "../components/images/minis.jpeg";
 import "../styles/global.css";
 
 const facts = [
@@ -13,26 +15,67 @@ const facts = [
   { A: "I love all things", B: "miniature", id: "sec4" },
   { A: "I enjoy", B: "sewing, reading and being outside", id: "sec5" },
 ];
+
+const factsDisplay = [
+  {
+    title: "Front End Web Design",
+    id: "sec1",
+    image: cincinnatiImage,
+    alt: "Cincinnati skyline from Devou Park Overlook in Covington, KY",
+    text: "Coming from a background in design, I have found my niche in front end web design. I enjoy the challenge of creating visually appealing yet function websites.",
+  },
+  {
+    title: "Cincinnati",
+    id: "sec2",
+    image: cincinnatiImage,
+    alt: "Cincinnati skyline from Devou Park Overlook in Covington, KY",
+    text: "I moved to Cincinnati in 2018 and never left. I fell in love with the architecture, restaurants, and all the different neighborhoods. However, being from Michigan, I am still a Lions fan! ",
+  },
+  {
+    title: "Running",
+    id: "sec3",
+    image: runningImage,
+    alt: "Cincinnati Flying Pig Half Marathon finisher with medal",
+    text: "My new years resolution in 2024 was to run a half marathon! 4 months later, I ran my first Flying Pig and have been addicted ever since. After completed 3 more half's, I have signed up for my first full in the fall.",
+  },
+  {
+    title: "Miniatures",
+    id: "sec4",
+    image: minis,
+    alt: "A varying collection of miniature items based off of real life products",
+    text: "I have an extensive collection of miniature items that I collect and display. It is somewhat of an unhealthy obsession but I love it! I also make miniature diaoramas that range from grocery stores to libraries and greenhouses. I am always keeping my eyes out for more!",
+  },
+  {
+    title: "Hobbies!",
+    id: "sec5",
+    image: hobbies,
+    alt: "Me and my family playing pickleball at a local park",
+    text: "In addition to running, I like to spend my free time sewing, reading and being outside. I love walking, biking, pickleball, swimming, and just about anything to get me outdoors. I also really enjoy cooking and taking care of my plants.",
+  },
+];
 ---
 
-<HeaderLayout title="About Me" cl>
+<HeaderLayout title="About Me">
   <!-- header -->
 </HeaderLayout>
-<div class="flex flex-col justify-center items-center
- mh-full mt-20">
+<div
+  class="flex flex-col justify-center items-center
+ mh-full mt-20 scroll-link"
+>
+  <div id="header"></div>
   <div class="flex">
     <Image
       src={aboutMeImage}
-      class="w-md h-auto"
+      class="w-md h-auto shadow-md rounded-md"
       alt="A photo of me in front of Lake Michigan"
     />
-    <div class="ml-10 mt-4">
+    <div class="ml-10 bg-gray-50 shadow-md rounded-lg p-5 w-2/3 max-w-5xl flex flex-col h-2/3">
       <h1 class="text-2xl font-bold">Hi! My name is Maddie</h1>
       <div class="ml-5">
         {
           facts.map((fact) => (
             <div class="flex my-7">
-              <p class="mr-1">{fact.A}</p>
+              <p class="mr-1 text-md">{fact.A}</p>
               <button
                 class="font-semibold hover:text-green cursor-pointer scroll-link"
                 data-id={fact.id}
@@ -46,36 +89,31 @@ const facts = [
     </div>
   </div>
   <div class="flex flex-col justify-center items-center">
-    <div id="sec1" class="m-20">Web Design</div>
-    <div id="sec2" class="m-20 flex justify-center">
-      <Image
-        src={cincinnatiImage}
-        class="w-60 h-auto ml-5 mr-6"
-        alt="A photo of Cincinnati, Ohio"
-      />
-      <div class="w-1/2">
-        <h2 class="font-semibold text-green mb-5 w-30%">Cincinnati</h2>
-        I moved to Cincinnati in 2018 and never left. I fell in love with the architecture,
-        restaurants, and the the differing personalities of the neighborhoods. However,
-        I am still a Lions fan!
-      </div>
-    </div>
-    <div id="sec3" class="m-20 flex">
-      <div class="w-1/2 mr-6">
-        My new years resolution in 2024 was to run a half marathon! 4 months
-        later, I ran my first Flying Pig and have been addicted ever since.
-        After completed 3 more half's, I have signed up for my first full in the
-        fall.
-      </div>
-      <Image
-        src={runningImage}
-        class="w-60 h-auto ml-5"
-        alt="A photo of me running a half marathon"
-      />
-    </div>
-    <div id="sec4" class="m-20">Minis</div>
-    <div id="sec5" class="m-20">Hobbies</div>
+    {
+      factsDisplay.map((p) => (
+        <div
+          id={p.id}
+          class="m-20 flex shadow-md bg-gray-100 rounded-lg p-5 w-2/3 max-w-5xl"
+        >
+          <Image
+            src={p.image}
+            alt={p.alt}
+            class="w-80 h-auto mr-6 rounded-lg"
+            alt="A photo of Cincinnati, Ohio"
+          />
+          <div class="flex flex-col w-full mt-4">
+            <h2 class="font-semibold text-green mb-5 text-xl">{p.title}</h2>
+            <p class="flex w-full text-base/7">{p.text}</p>
+          </div>
+        </div>
+      ))
+    }
   </div>
+  <button
+    data-id="header"
+    class="mb-10 bg-green-light px-4 py-2 shadow-md rounded-md cursor-pointer scroll-link"
+    data-id="header">Scroll to Top</button
+  >
 </div>
 
 <script>
