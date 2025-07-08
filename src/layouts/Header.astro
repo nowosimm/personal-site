@@ -2,15 +2,33 @@
 import "../styles/global.css";
 ---
 
-<div class="flex justify-around items-center bg-green-light p-2">
+<div class="hidden md:flex justify-around items-center bg-green-light p-2">
   <p><a href="/About" class="links">About Me</a></p>
   <p><a href="/Project" class="links">Projects</a></p>
   <h1
-    class="bg-green-medium h-[70px] w-[300px] rounded-[50%] flex items-center justify-center text-2xl">
+    class="bg-green-medium h-[70px] w-[300px] rounded-[50%] flex items-center justify-center text-2xl"
+  >
     Maddie Nowosielski
   </h1>
   <p><a href="/Blog" class="links">Blog</a></p>
   <p><a href="/Github" class="links">Github</a></p>
+</div>
+
+<div class="block md:hidden">
+  <div class="bg-green-light flex justify-center items-center p-2">
+    <h1
+      class="bg-green-medium h-[70px] w-[300px] rounded-[50%] flex items-center justify-center text-2xl"
+    >
+      Maddie Nowosielski
+    </h1>
+  </div>
+  <div class="flex justify-around items-center bg-green-medium p-2">
+    <p><a href="/About" class="links">About Me</a></p>
+    <p><a href="/Project" class="links">Projects</a></p>
+
+    <p><a href="/Blog" class="links">Blog</a></p>
+    <p><a href="/Github" class="links">Github</a></p>
+  </div>
 </div>
 
 <style>

@@ -60,16 +60,19 @@ const factsDisplay = [
 </HeaderLayout>
 <div
   class="flex flex-col justify-center items-center
- mh-full mt-20 scroll-link"
+ mh-full mt-5 scroll-link lg:mt-20"
 >
   <div id="header"></div>
-  <div class="flex">
+
+  <div class="flex flex-col lg:flex-row">
     <Image
       src={aboutMeImage}
-      class="w-md h-auto shadow-md rounded-md"
+      class="w-md h-auto shadow-md rounded-md lg:w-md"
       alt="A photo of me in front of Lake Michigan"
     />
-    <div class="ml-10 bg-gray-50 shadow-md rounded-lg p-5 w-2/3 max-w-5xl flex flex-col h-2/3">
+    <div
+      class="bg-gray-50 shadow-md rounded-lg p-5 max-w-5xl flex flex-col h-2/3 mt-5 lg:mt-0 lg:w-2/3 lg:ml-10"
+    >
       <h1 class="text-2xl font-bold">Hi! My name is Maddie</h1>
       <div class="ml-5">
         {
@@ -88,22 +91,22 @@ const factsDisplay = [
       </div>
     </div>
   </div>
+
   <div class="flex flex-col justify-center items-center">
     {
       factsDisplay.map((p) => (
         <div
           id={p.id}
-          class="m-20 flex shadow-md bg-gray-100 rounded-lg p-5 w-2/3 max-w-5xl"
+          class="m-20 flex flex-col shadow-md bg-gray-100 rounded-lg p-5 lg:flex-row lg:max-w-5xl"
         >
           <Image
             src={p.image}
             alt={p.alt}
-            class="w-80 h-auto mr-6 rounded-lg"
-            alt="A photo of Cincinnati, Ohio"
+            class="max-w-sm max-h-sm h-auto rounded-lg aspect-square lg:mr-6"
           />
-          <div class="flex flex-col w-full mt-4">
+          <div class="flex flex-col w-full my-4">
             <h2 class="font-semibold text-green mb-5 text-xl">{p.title}</h2>
-            <p class="flex w-full text-base/7">{p.text}</p>
+            <p class="flex text-base max-w-sm  lg:max-w-sm">{p.text}</p>
           </div>
         </div>
       ))
