@@ -1,4 +1,9 @@
 ---
+import HeaderLayout from "../../layouts/Header.astro";
+import { Image } from "astro:assets";
+import "../../styles/global.css";
+import { projects } from "../Data/projects.js";
+const { project } = Astro.params;
 export function getStaticPaths() {
   return [
     { params: { project: "craft-tracker" } },
@@ -13,8 +18,65 @@ export function getStaticPaths() {
     { params: { project: "rock-paper-scissors" } },
   ];
 }
+const projectData = projects.find((p) => p.id === project);
+if (!projectData) {
+  throw new Error(`Project not found: ${project}`);
+}
 
-const { project } = Astro.params;
+const projectInfo = [
+  {
+    title: "Project Description",
+    content: projectData.description,
+    src: projectData.image1,
+  },
+  {
+    title: "Challenges",
+    content: projectData.challenges,
+    src: projectData.image1,
+  },
+  {
+    title: "Takeaways",
+    content: projectData.takeaways,
+    src: projectData.image1,
+  },
+];
 ---
+<HeaderLayout title="About Me">
+  <!-- header -->
+</HeaderLayout>
+<div class="p-6">
+  <h1 class="text-2xl font-semibold">{projectData.title}</h1>
 
-<div>Good dog, {project}!</div>
+  <div class="flex flex-col justify-center items-center">
+    {
+      projectInfo.map((p, idx) => (
+        <div
+          id={idx}
+          class="m-20 flex flex-col shadow-md bg-gray-100 rounded-lg p-5 lg:flex-row lg:max-w-5xl"
+        >
+          <Image
+            src={p.src}
+                  alt="Project screenshot"
+            class="max-w-sm max-h-sm h-auto rounded-lg aspect-square lg:mr-6"
+          />
+          <div class="flex flex-col w-full my-4">
+            <h2 class="font-semibold text-green mb-5 text-xl">{p.title}</h2>
+            <p class="flex text-base max-w-sm  lg:max-w-sm">{p.content}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+
+
+  <style>
+    body {
+      background-size: 20px 20px; /* Size of the grid cells */
+      background-image:
+        linear-gradient(to right, rgb(231, 231, 231) 1px, transparent 1px),
+        /* Vertical lines */
+          linear-gradient(to bottom, rgb(231, 231, 231) 1px, transparent 1px); /* Horizontal lines */
+    }
+  </style>
+</div>
