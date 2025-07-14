@@ -32,31 +32,36 @@ const projectInfo = [
   {
     title: "Challenges",
     content: projectData.challenges,
-    src: projectData.image1,
+    src: projectData.image2,
   },
   {
     title: "Takeaways",
     content: projectData.takeaways,
-    src: projectData.image1,
+    src: projectData.image3,
   },
 ];
 ---
+
 <HeaderLayout title="About Me">
   <!-- header -->
 </HeaderLayout>
 <div class="p-6">
-  <h1 class="text-2xl font-semibold">{projectData.title}</h1>
+  <div class="p-6 flex justify-center items-center">
+    <div class="bg-gray-100 rounded-lg px-8 py-4 max-w-[80rem] w-full flex shadow-md">
+      <h1 class="text-2xl font-semibold">{projectData.title}</h1>
+    </div>
+  </div>
 
   <div class="flex flex-col justify-center items-center">
     {
       projectInfo.map((p, idx) => (
         <div
           id={idx}
-          class="m-20 flex flex-col shadow-md bg-gray-100 rounded-lg p-5 lg:flex-row lg:max-w-5xl"
+          class="m-15 flex flex-col shadow-md bg-gray-100 rounded-lg p-5 lg:flex-row lg:max-w-5xl"
         >
           <Image
             src={p.src}
-                  alt="Project screenshot"
+            alt="Project screenshot"
             class="max-w-sm max-h-sm h-auto rounded-lg aspect-square lg:mr-6"
           />
           <div class="flex flex-col w-full my-4">
@@ -66,9 +71,8 @@ const projectInfo = [
         </div>
       ))
     }
+
   </div>
-
-
 
   <style>
     body {
