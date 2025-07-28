@@ -1,5 +1,7 @@
 // Craft Tracker Images
-import craft_tracker_one from "../../components/images/projectImages/craft_tracker_challenges.png";
+import craftTracker_one from "../../components/images/projectImages/craft_view.png";
+import craftTracker_challenges from "../../components/images/projectImages/craft_tracker_challenges.png";
+
 
 // MemoryImages
 import memory_Game from "../../components/images/projectImages/memory_app.png";
@@ -26,15 +28,23 @@ import sketch_challenges from "../../components/images/projectImages/sketch_chal
 import toDo_one from "../../components/images/projectImages/toDo_view.png";
 import toDo_challenges from "../../components/images/projectImages/toDo_challenges.png";
 
+// Shopping Cart Images
+import shoppingCart_one from "../../components/images/projectImages/shoppingCart_view.png";
+import shoppingCart_challenges from "../../components/images/projectImages/shoppingCart_challenges.png";
+
+// mock Blog
+import mockBlog_one from "../../components/images/projectImages/mockBlog_view.png";
+import mockBlog_challenges from "../../components/images/projectImages/mockBlog_challenges.png";
+
 
 export const projects = [
   {
     id: "craft-tracker",
     title: "Craft Tracker",
     description: "Craft Tracker is a hobby and crafting social media page made to keep past projects all in one space and find + share inspiration between friends. I kind of wanted to mix the homemade feel of scrolling Etsy with the inspiration of Pinterest, but add the social component. I thought it was important for the user to be able to store details on materials, notes, links, and images all in one place to make it easier to reference in the future.",
-    image1: filler,
+    image1: craftTracker_one,
     challenges: "Challenges I faced were related mostly to creating an intertwining schema of users, posts, likes and comments. I quickly learned it wouldn't be as simple as just having separate schemas in my Mongo database, but that I would need to incorporate virtual schemas to access all the data dependent on the current user and their data. In the routes I would then need to populate each of the schemas with the information I needed to fill out that call., ",
-    image2: craft_tracker_one,
+    image2: craftTracker_challenges,
     takeaways: "This was a great challenge in creating a mock social media platform and being able to experience how the web of schema information interacts with each element. I really enjoyed mapping out the user functionality of the site and feel pleased with my results. I think this app really put into perspective the never-ending tasks complex projects seems to have and how to go about breaking down tasks into smaller chunks rather than getting overwhelmed at the big picture.",
     image3: filler,
   },
@@ -61,11 +71,11 @@ export const projects = [
     {
     id: "mock-blog",
     title: "Mock Blog Project",
-    description: "P",
-    image1: filler,
-    challenges: "Challenges I faced were related mostly to creating an intertwining schema of users, posts, likes and comments. I quickly learned it wouldn’t be as simple as just having separate schemas in my Mongo database, but that I would need to incorporate virtual schemas to access all the data dependent on the current user and their data. In the routes I would then need to populate each of the schemas with the information I needed to fill out that call., ",
-    image2: filler,
-    takeaways: "Wanting to create a mock social media platform, ",
+    description: "Finally ready to start making more complex projects using MongoDB, I wanted to create a mock blog as I thought it would bet realistic to have an application with users, likes, comments and posts. This was a great challenge in setting up those relationships and using passport authentication in something more complex.",
+    image1: mockBlog_one,
+    challenges: "There were a lot of complexities with this project as it was my first time using MongoDB in a more complex way. It was my first time creating a full application using passport to store login information, and creating routes to send that data and setting up passport correctly proved to be a challenge. This project made me realize how important it is to put imports in the correct order and how much of a headache that can cause if just one item is out of place.",
+    image2: mockBlog_challenges,
+    takeaways: "Learning how to use passport authenticate with MongoDB deemed challenged, yet once it was properly set up, made the storing of user login information much more manageable. It was really fun to see how likes and comments updated in real time and would change based on who the current user was.",
     image3: filler,
   },
       {
@@ -101,11 +111,11 @@ export const projects = [
       {
     id: "shopping-cart",
     title: "Mock Shopping Cart",
-    description: "P",
-    image1: filler,
-    challenges: "Challenges I faced were related mostly to creating an intertwining schema of users, posts, likes and comments. I quickly learned it wouldn’t be as simple as just having separate schemas in my Mongo database, but that I would need to incorporate virtual schemas to access all the data dependent on the current user and their data. In the routes I would then need to populate each of the schemas with the information I needed to fill out that call., ",
-    image2: filler,
-    takeaways: "Wanting to create a mock social media platform, ",
+    description: "Wanting to create a mock site to practice site functionality, I decided that a shopping cart would be a good place to start. It was great practice to see how elements of an application interact with each other and how to create an enjoyable user experience. I used Tailwind for their pre-made UI components for this application and while I enjoyed the options these components offered, I ultimately struggled with setting them up and with making changed needed for the site.",
+    image1: shoppingCart_one,
+    challenges: "This was my first time using Tailwind for UI elements and I found it to be a really difficult experience. I really enjoy using Tailwind for normal CSS styling, however, when using it for their pre-made components I found the code to be overwhelming and over-complicated. Since this project, I have discovered that I enjoy using Mantine's components due to their simplicity and ease of use.",
+    image2: shoppingCart_challenges,
+    takeaways: "I am glad that I tried using Tailwind UI components as it led me to find other options such as Mantine that I enjoy using much more. While I don't like to solely rely on these builders, it is great to use when I need a more complicated component or to see how accessibility should be properly used. ",
     image3: filler,
   },
       {
@@ -116,16 +126,6 @@ export const projects = [
     challenges: "My first application of useState() gave me a few challenges to work through. At first, it was hard to wrap my head around the idea of passing stored state values down the line to populate inputs in other components. It took a lot of trial and error to get the data passed correctly but I think that was a really important step in getting a better understanding of the concept.",
     image2: cv_challenges,
     takeaways: "It was really exciting to see how much more could be accomplished with a basic understanding of useState() properties. This was a turning point for me in my journey as it opened the doors to so much more complex and interesting projects. Looking back now it is hard to imagine creating any application without using state.",
-    image3: filler,
-  },
-      {
-    id: "rock-paper-scissors",
-    title: "Rock, Paper, Scissors",
-    description: "P",
-    image1: filler,
-    challenges: "Challenges I faced were related mostly to creating an intertwining schema of users, posts, likes and comments. I quickly learned it wouldn’t be as simple as just having separate schemas in my Mongo database, but that I would need to incorporate virtual schemas to access all the data dependent on the current user and their data. In the routes I would then need to populate each of the schemas with the information I needed to fill out that call., ",
-    image2: filler,
-    takeaways: "Wanting to create a mock social media platform, ",
     image3: filler,
   },
 
