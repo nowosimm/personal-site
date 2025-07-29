@@ -1,34 +1,47 @@
 ---
-import astroLogo from "../assets/astro.svg";
-import background from "../assets/background.svg";
 import HeaderLayout from "../layouts/Header.astro";
-import fillerImage from "../components/images/filler_image.png";
-import { Image } from "astro:assets";
+import "../styles/global.css";
+import CarouselComponent from "../components/React Components/carousel.jsx";
+import MantineWrapper from "../components/React Components/MantineWrapper";
+
+const aboutMe = [
+  {
+    title: "My Background",
+    content:
+      "I graduated from The University of Cincinnati in 2023 with a major in Fashion Design and Minor in Marketing. During my last year in school I came to the realization that the path I had chosen was one I not longer saw for myself. Once graduated, I took time to reflect on the future I wanted for myself and decided I wanted to pursue programming.",
+  },
+  {
+    title: "Why Front-End Development?",
+    content:
+      "After experimenting with both front-end and back-end programming, I decided to pursue front-end development. I found that front-end programming gave me the aspects of fashion design I really enjoyed - creating practical and aesthetic solutions, while also providing what fashion design lacked — advanced problem-solving and real-world application challenges. ",
+  },
+  {
+    title: "My Journey",
+    content:
+      "After researching all my options, I found that The Odin Project was the best resource to get me started. I completed their beginner course and most of their JavaScript course. Along the way, I learned the basics - starting simple using the command line to writing my first <div> tags - and progressed to building full applications complete with APIs and databases. I was also lucky to have a mentor help me throughout my journey and the knowledge I received is invaluable.",
+  },
+  {
+    title: "What's Next?",
+    content:
+      "I want to be apart of a front-end development team working on projects",
+  },
+];
 ---
 
 <div>
-  <HeaderLayout title="About Me" cl>
+  <HeaderLayout title="About Me">
     <!-- header -->
   </HeaderLayout>
-  <div class="flex flex-col justify-center align-middle">
-    <div class="flex align-middle justify-center">
-      <Image
-        src={fillerImage}
-        class="w-md h-auto shadow-md rounded-md flex justify-center align-middle"
-        alt="Welcome image of me standing in front of Lake Michigan"
-      />
-      <div class="ml-8">
-        <h1> Welcome to my page</h1>
-      </div>
-    </div>
-
-    <div class="flex gap-5 m-5 justify-center align-middle">
-      <h2 class="bg-gray-100 px-3 py-1 rounded-lg shadow-sm">Contact:</h2>
-      <p class="bg-gray-100 px-3 py-1 rounded-lg shadow-sm">
-        madisonmnowosielski@gmail.com
-      </p>
-      <p class="bg-gray-100 px-3 py-1 rounded-lg shadow-sm">734-972-3206</p>
-    </div>
+  <div class="flex flex-col justify-center items-center w-full">
+    <CarouselComponent client:only />
+    {
+      aboutMe.map((p) => (
+        <div class=" flex flex-col justify-center items-center bg-gray-100 m-5 shadow-md rounded-lg p-5 max-w-3/5">
+          <h2 class="font-semibold text-green text-xl mb-5">{p.title}</h2>
+          <p class="text-base">{p.content}</p>
+        </div>
+      ))
+    }
   </div>
 
   <style>
