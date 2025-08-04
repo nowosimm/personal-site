@@ -44,10 +44,11 @@ const projectInfo = [
 <HeaderLayout title="About Me">
   <!-- header -->
 </HeaderLayout>
+
 <div class="p-6">
   <div class="p-6 flex justify-center items-center">
-    <div class="bg-gray-100 rounded-lg px-8 py-4 max-w-[80rem] w-full flex shadow-md">
-      <h1 class="text-2xl font-semibold">{projectData.title}</h1>
+    <div class=" px-8 py-4 max-w-[80rem] w-full flex">
+      <h1 class="text-2xl font-semibold bg-sweet-cream text-terra-cotta">{projectData.title}</h1>
     </div>
   </div>
 
@@ -56,16 +57,17 @@ const projectInfo = [
       projectInfo.map((p, idx) => (
         <div
           id={idx}
-          class="m-15 flex flex-col shadow-md bg-gray-100 rounded-lg p-5 lg:flex-row lg:max-w-5xl"
+          class="m-10 flex flex-col bg-sweet-cream rounded-xl p-5 lg:flex-row lg:max-w-6xl border-2 border-terra-cotta"
         >
           <Image
             src={p.src}
             alt="Project screenshot"
-            class="max-w-sm max-h-sm h-auto rounded-lg aspect-square lg:mr-6"
+            class="max-w-sm max-h-sm h-auto rounded-lg aspect-square lg:mr-6 "
           />
           <div class="flex flex-col w-full my-4">
-            <h2 class="font-semibold text-green mb-5 text-xl">{p.title}</h2>
-            <p class="flex text-base max-w-sm  lg:max-w-sm">{p.content}</p>
+            <h2 class="font-semibold text-terra-cotta mb-5 text-xl">{p.title}</h2>
+                  <div class="bg-terra-cotta w-full h-px mb-4" />
+            <p class="flex text-sm/8  max-w-sm  lg:max-w-sm">{p.content}</p>
           </div>
         </div>
       ))
@@ -77,9 +79,9 @@ const projectInfo = [
     body {
       background-size: 20px 20px; /* Size of the grid cells */
       background-image:
-        linear-gradient(to right, rgb(231, 231, 231) 1px, transparent 1px),
+        linear-gradient(to right, #FAF4E7 1px, transparent 1px),
         /* Vertical lines */
-          linear-gradient(to bottom, rgb(231, 231, 231) 1px, transparent 1px); /* Horizontal lines */
+          linear-gradient(to bottom, #FAF4E7 1px, transparent 1px); /* Horizontal lines */
     }
   </style>
 </div>

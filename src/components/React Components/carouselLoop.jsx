@@ -5,7 +5,6 @@ import { Image } from "@mantine/core";
 import MantineWrapper from "./MantineWrapper";
 import filler from "../images/filler_image.png";
 
-
 import one from "../images/carouselImages/one.png";
 import two from "../images/carouselImages/two.png";
 import three from "../images/carouselImages/three.png";
@@ -29,15 +28,13 @@ import twenty from "../images/carouselImages/twenty.png";
 import twentyone from "../images/carouselImages/twentyone.png";
 import twentytwo from "../images/carouselImages/twentytwo.png";
 
-
-
-export default function CarouselComponent() {
+export default function CarouselLoopComponent() {
   return (
     <MantineWrapper>
-      <Carousel 
-      withIndicators
-      // slideGap="sm"
-      emblaOptions={{ loop: true, align: 'start'}}>
+      <Carousel
+        withIndicators
+        slideSize="50%"
+        emblaOptions={{ loop: true, align: "start", slidesToScroll: 2 }}>
         <Carousel.Slide>
           <Image src={one.src} alt="Slide 1" />
         </Carousel.Slide>
@@ -56,56 +53,54 @@ export default function CarouselComponent() {
         <Carousel.Slide>
           <Image src={six.src} alt="Slide 6" />
         </Carousel.Slide>
-                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={seven.src} alt="Slide 7" />
         </Carousel.Slide>
-                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={eight.src} alt="Slide 8" />
         </Carousel.Slide>
-                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={nine.src} alt="Slide 9" />
         </Carousel.Slide>
-                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={ten.src} alt="Slide 10" />
         </Carousel.Slide>
-                        <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={eleven.src} alt="Slide 10" />
         </Carousel.Slide>
-                        <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={twelve.src} alt="Slide 10" />
         </Carousel.Slide>
-                        <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={thirteen.src} alt="Slide 10" />
         </Carousel.Slide>
-                        <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={fourteen.src} alt="Slide 10" />
         </Carousel.Slide>
-                        <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={fifteen.src} alt="Slide 10" />
         </Carousel.Slide>
-                        <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={sixteen.src} alt="Slide 10" />
         </Carousel.Slide>
-                                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={seventeen.src} alt="Slide 10" />
         </Carousel.Slide>
-                                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={eighteen.src} alt="Slide 10" />
         </Carousel.Slide>
-                                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={nineteen.src} alt="Slide 10" />
         </Carousel.Slide>
-                                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={twenty.src} alt="Slide 10" />
         </Carousel.Slide>
-                                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={twentyone.src} alt="Slide 10" />
         </Carousel.Slide>
-                                <Carousel.Slide>
+        <Carousel.Slide>
           <Image src={twentytwo.src} alt="Slide 10" />
         </Carousel.Slide>
-        
-
       </Carousel>
     </MantineWrapper>
   );
