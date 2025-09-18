@@ -1,4 +1,11 @@
 ---
+import { icons } from "../../components/React Components/Icons.jsx";
+const RightArrow = icons.rightArrow;
+const LeftArrow = icons.leftArrow;
+const Exit = icons.exit;
+const ChevronRight = icons.chevronRight;
+const ChevronLeft = icons.chevronLeft;
+
 import HeaderLayout from "../../layouts/Header.astro";
 import { Image } from "astro:assets";
 import "../../styles/global.css";
@@ -22,7 +29,8 @@ if (!projectData) {
   throw new Error(`Project not found: ${project}`);
 }
 const projectIndex = projects.findIndex((p) => p.id === project);
-const previousProject = projectIndex > 0 ? projects[projectIndex - 1] : projects[projects.length - 1];
+const previousProject =
+  projectIndex > 0 ? projects[projectIndex - 1] : projects[projects.length - 1];
 const nextProject =
   projectIndex < projects.length - 1 ? projects[projectIndex + 1] : projects[0];
 ---
@@ -38,7 +46,7 @@ const nextProject =
       <Image
         src={projectData.image1}
         class="border-terra-cotta rounded-lg min-w-xs max-w-lg h-auto m-8"
-        alt="A photo of me in front of Lake Michigan"
+        alt="Project screenshot"
       />
     </div>
 
@@ -86,11 +94,11 @@ const nextProject =
   <div class="flex gap-2 p-10 mb-5">
     {
       previousProject ? (
-        <a href={`/Project/${previousProject.id}`}> Previous </a>
+        <a href={`/Project/${previousProject.id}`} class="flex bg-sweet-cream w-20 h-9 justify-center items-center pr-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"><ChevronLeft size={25} stroke={1.5} />Back </a>
       ) : null
     }
-    <a href="/Project"> Exit </a>
-    {nextProject ? <a href={`/Project/${nextProject.id}`}> Next </a> : null}
+    <a href="/Project" class="flex bg-sweet-cream w-15 h-9 justify-center items-center mx-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm">Exit </a>
+    {nextProject ? <a href={`/Project/${nextProject.id}`} class="flex bg-sweet-cream w-20 h-9 justify-center items-center pl-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"> Next <ChevronRight size={25} stroke={1.5} /></a> : null}
   </div>
 </div>
 
