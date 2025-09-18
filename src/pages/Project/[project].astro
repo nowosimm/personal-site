@@ -21,67 +21,100 @@ const projectData = projects.find((p) => p.id === project);
 if (!projectData) {
   throw new Error(`Project not found: ${project}`);
 }
-
-const projectInfo = [
-  {
-    title: "Project Description",
-    content: projectData.description,
-    src: projectData.image1,
-  },
-  {
-    title: "Challenges",
-    content: projectData.challenges,
-    src: projectData.image2,
-  },
-  {
-    title: "Takeaways",
-    content: projectData.takeaways,
-    src: projectData.image3,
-  },
-];
+const projectIndex = projects.findIndex((p) => p.id === project);
+const previousProject = projectIndex > 0 ? projects[projectIndex - 1] : projects[projects.length - 1];
+const nextProject =
+  projectIndex < projects.length - 1 ? projects[projectIndex + 1] : projects[0];
 ---
 
 <HeaderLayout title="About Me">
   <!-- header -->
 </HeaderLayout>
 
-<div class="p-6">
-  <div class="p-6 flex justify-center items-center">
-    <div class=" px-8 py-4 max-w-[80rem] w-full flex">
-      <h1 class="text-2xl font-semibold bg-sweet-cream text-terra-cotta">{projectData.title}</h1>
+<div class="flex flex-col justify-center items-center
+ mh-full scroll-link">
+  <div class="flex flex-col w-full lg:flex-row">
+    <div class="flex justify-center items-center lg:w-1/2">
+      <Image
+        src={projectData.image1}
+        class="border-terra-cotta rounded-lg min-w-xs max-w-lg h-auto m-8"
+        alt="A photo of me in front of Lake Michigan"
+      />
+    </div>
+
+    <div
+      class="p-5 flex flex-col justify-center items-center bg-sweet-cream lg:w-1/2 lg:mt-0"
+    >
+      <div class="px-5 max-w-xl">
+        <h1 class="text-2xl font-bold text-left w-full">{projectData.title}</h1>
+        <div class="justify-center items-center text-left w-full">
+          <div class="flex my-7 text-sm/8">
+            {projectData.description}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="flex flex-col justify-center items-center">
-    {
-      projectInfo.map((p, idx) => (
-        <div
-          id={idx}
-          class="m-10 flex flex-col bg-sweet-cream rounded-xl p-5 lg:flex-row lg:max-w-6xl border-2 border-terra-cotta"
-        >
-          <Image
-            src={p.src}
-            alt="Project screenshot"
-            class="max-w-sm max-h-sm h-auto rounded-lg aspect-square lg:mr-6 "
-          />
-          <div class="flex flex-col w-full my-4">
-            <h2 class="font-semibold text-terra-cotta mb-5 text-xl">{p.title}</h2>
-                  <div class="bg-terra-cotta w-full h-px mb-4" />
-            <p class="flex text-sm/8  max-w-sm  lg:max-w-sm">{p.content}</p>
-          </div>
-        </div>
-      ))
-    }
+  <div class="checkerboard-gradient w-full"></div>
 
+  <div class="flex flex-col justify-center items-center pt-5 w-md lg:w-full">
+    <div
+      class="flex flex-col bg-sweet-cream rounded-lg p-8 m-5 lg:min-w-lg lg:max-w-4xl lg:flex-row"
+    >
+      <Image
+        src={projectData.image2}
+        alt="Project screenshot"
+        class="w-sm h-sm h-auto rounded-lg aspect-square lg:mr-6 border-2 border-terra-cotta"
+      />
+      <div>
+        <h2 class="font-semibold text-terra-cotta text-lg mt-4 lg:mb-3 lg:mt-0">
+          Challenges
+        </h2>
+        <div class="border-1 border-terra-cotta w-full"></div>
+        <p class="flex text-sm/8 px-4 mt-3">{projectData.challenges}</p>
+      </div>
+    </div>
+    <div
+      class="flex flex-col bg-sweet-cream rounded-lg p-8 m-5 lg:min-w-lg lg:max-w-4xl"
+    >
+      <h2 class="font-semibold text-terra-cotta text-lg lg:mb-3">Takeaways</h2>
+      <div class="border-1 border-terra-cotta w-full"></div>
+      <p class="flex text-sm/8 px-4 my-3">{projectData.takeaways}</p>
+    </div>
   </div>
-
-  <style>
-    body {
-      background-size: 20px 20px; /* Size of the grid cells */
-      background-image:
-        linear-gradient(to right, #FAF4E7 1px, transparent 1px),
-        /* Vertical lines */
-          linear-gradient(to bottom, #FAF4E7 1px, transparent 1px); /* Horizontal lines */
+  <div class="flex gap-2 p-10 mb-5">
+    {
+      previousProject ? (
+        <a href={`/Project/${previousProject.id}`}> Previous </a>
+      ) : null
     }
-  </style>
+    <a href="/Project"> Exit </a>
+    {nextProject ? <a href={`/Project/${nextProject.id}`}> Next </a> : null}
+  </div>
 </div>
+
+<style>
+  body {
+    background-size: 20px 20px; /* Size of the grid cells */
+    background-image:
+      linear-gradient(to right, #faf4e7 1px, transparent 1px),
+      /* Vertical lines */
+        linear-gradient(to bottom, #faf4e7 1px, transparent 1px); /* Horizontal lines */
+  }
+
+  .checkerboard-gradient {
+    background-color: #ed9b83; /* Light color for the base */
+    background-image: linear-gradient(45deg, #a75c3a 25%, transparent 25%),
+      linear-gradient(-45deg, #a75c3a 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #a75c3a 75%),
+      linear-gradient(-45deg, transparent 75%, #a75c3a 75%);
+    background-size: 50px 50px; /* Size of each square in the pattern */
+    background-position:
+      0 0,
+      0 25px,
+      25px -25px,
+      25px 0; /* Adjust positions for alignment */
+    height: 75px;
+  }
+</style>
