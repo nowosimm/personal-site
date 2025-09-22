@@ -1,8 +1,5 @@
 ---
 import { icons } from "../../components/React Components/Icons.jsx";
-const RightArrow = icons.rightArrow;
-const LeftArrow = icons.leftArrow;
-const Exit = icons.exit;
 const ChevronRight = icons.chevronRight;
 const ChevronLeft = icons.chevronLeft;
 
@@ -10,6 +7,7 @@ import HeaderLayout from "../../layouts/Header.astro";
 import { Image } from "astro:assets";
 import "../../styles/global.css";
 import { projects } from "../Data/projects.js";
+import CarouselComponent from "../../components/React Components/carousel.jsx";
 const { project } = Astro.params;
 export function getStaticPaths() {
   return [
@@ -44,7 +42,7 @@ const nextProject =
   <div class="flex flex-col w-full lg:flex-row">
     <div class="flex justify-center items-center lg:w-1/2">
       <Image
-        src={projectData.image1}
+        src={projectData.view}
         class="border-terra-cotta rounded-lg min-w-xs max-w-lg h-auto m-8"
         alt="Project screenshot"
       />
@@ -65,16 +63,33 @@ const nextProject =
   </div>
 
   <div class="checkerboard-gradient w-full"></div>
-
+    <!-- <div class="flex">
+            <Image
+        src={projectData.image3}
+        alt="Project screenshot"
+        class="w-md h-auto rounded-lg  lg:m-6"
+      />
+                  <Image
+        src={projectData.image4}
+        alt="Project screenshot"
+        class="w-md  h-auto rounded-lg  lg:m-6"
+      />
+                  <Image
+        src={projectData.image5}
+        alt="Project screenshot"
+        class="w-md h-auto rounded-lg  lg:m-6"
+      />
+    </div> -->
   <div class="flex flex-col justify-center items-center pt-5 w-md lg:w-full">
     <div
       class="flex flex-col bg-sweet-cream rounded-lg p-8 m-5 lg:min-w-lg lg:max-w-4xl lg:flex-row"
     >
       <Image
-        src={projectData.image2}
+        src={projectData.challengesImage}
         alt="Project screenshot"
         class="w-sm h-sm h-auto rounded-lg aspect-square lg:mr-6 border-2 border-terra-cotta"
       />
+      
       <div>
         <h2 class="font-semibold text-terra-cotta text-lg mt-4 lg:mb-3 lg:mt-0">
           Challenges
@@ -83,6 +98,7 @@ const nextProject =
         <p class="flex text-sm/8 px-4 mt-3">{projectData.challenges}</p>
       </div>
     </div>
+
     <div
       class="flex flex-col bg-sweet-cream rounded-lg p-8 m-5 lg:min-w-lg lg:max-w-4xl"
     >
@@ -91,6 +107,7 @@ const nextProject =
       <p class="flex text-sm/8 px-4 my-3">{projectData.takeaways}</p>
     </div>
   </div>
+  
   <div class="flex gap-2 p-10 mb-5">
     {
       previousProject ? (
@@ -100,6 +117,7 @@ const nextProject =
     <a href="/Project" class="flex bg-sweet-cream w-15 h-9 justify-center items-center mx-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm">Exit </a>
     {nextProject ? <a href={`/Project/${nextProject.id}`} class="flex bg-sweet-cream w-20 h-9 justify-center items-center pl-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"> Next <ChevronRight size={25} stroke={1.5} /></a> : null}
   </div>
+  
 </div>
 
 <style>
