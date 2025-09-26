@@ -47,12 +47,17 @@ const nextProject =
         alt="Project screenshot"
       />
     </div>
-
     <div
       class="p-5 flex flex-col justify-center items-center bg-sweet-cream lg:w-1/2 lg:mt-0"
     >
       <div class="px-5 max-w-xl">
-        <h1 class="text-2xl font-bold text-left w-full">{projectData.title}</h1>
+        <div class="flex">
+          <h1 class="text-2xl font-bold text-left w-full tracking-wide">
+            {projectData.title}
+          </h1>
+          <button class="bg-terra-cotta p-1 rounded-md text-sweet-cream hover:bg-#A75C3A">GitHub</button>
+        </div>
+
         <div class="justify-center items-center text-left w-full">
           <div class="flex my-7 text-sm/8">
             {projectData.description}
@@ -63,23 +68,6 @@ const nextProject =
   </div>
 
   <div class="checkerboard-gradient w-full"></div>
-    <!-- <div class="flex">
-            <Image
-        src={projectData.image3}
-        alt="Project screenshot"
-        class="w-md h-auto rounded-lg  lg:m-6"
-      />
-                  <Image
-        src={projectData.image4}
-        alt="Project screenshot"
-        class="w-md  h-auto rounded-lg  lg:m-6"
-      />
-                  <Image
-        src={projectData.image5}
-        alt="Project screenshot"
-        class="w-md h-auto rounded-lg  lg:m-6"
-      />
-    </div> -->
   <div class="flex flex-col justify-center items-center pt-5 w-md lg:w-full">
     <div
       class="flex flex-col bg-sweet-cream rounded-lg p-8 m-5 lg:min-w-lg lg:max-w-4xl lg:flex-row"
@@ -89,7 +77,7 @@ const nextProject =
         alt="Project screenshot"
         class="w-sm h-sm h-auto rounded-lg aspect-square lg:mr-6 border-2 border-terra-cotta"
       />
-      
+
       <div>
         <h2 class="font-semibold text-terra-cotta text-lg mt-4 lg:mb-3 lg:mt-0">
           Challenges
@@ -107,17 +95,36 @@ const nextProject =
       <p class="flex text-sm/8 px-4 my-3">{projectData.takeaways}</p>
     </div>
   </div>
-  
+
   <div class="flex gap-2 p-10 mb-5">
     {
       previousProject ? (
-        <a href={`/Project/${previousProject.id}`} class="flex bg-sweet-cream w-20 h-9 justify-center items-center pr-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"><ChevronLeft size={25} stroke={1.5} />Back </a>
+        <a
+          href={`/Project/${previousProject.id}`}
+          class="flex bg-sweet-cream w-20 h-9 justify-center items-center pr-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"
+        >
+          <ChevronLeft size={25} stroke={1.5} />
+          Back{" "}
+        </a>
       ) : null
     }
-    <a href="/Project" class="flex bg-sweet-cream w-15 h-9 justify-center items-center mx-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm">Exit </a>
-    {nextProject ? <a href={`/Project/${nextProject.id}`} class="flex bg-sweet-cream w-20 h-9 justify-center items-center pl-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"> Next <ChevronRight size={25} stroke={1.5} /></a> : null}
+    <a
+      href="/Project"
+      class="flex bg-sweet-cream w-15 h-9 justify-center items-center mx-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"
+      >Exit
+    </a>
+    {
+      nextProject ? (
+        <a
+          href={`/Project/${nextProject.id}`}
+          class="flex bg-sweet-cream w-20 h-9 justify-center items-center pl-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"
+        >
+          {" "}
+          Next <ChevronRight size={25} stroke={1.5} />
+        </a>
+      ) : null
+    }
   </div>
-  
 </div>
 
 <style>
