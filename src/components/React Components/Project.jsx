@@ -49,7 +49,7 @@ export default function Projects({}) {
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl relative max-h-[90vh] m-5 flex flex-col">
             {/* Header */}
-            <div className="flex justify-between items-center p-5 border-b border-gray-100 sticky top-0 bg-white z-10">
+            <div className="flex justify-between items-center rounded-lg p-5 border-b border-gray-100 sticky top-0 bg-white z-10">
               <h2 className="text-2xl font-bold">{selectedProject.title}</h2>
               <button
                 onClick={() => setSelectedProject(null)}

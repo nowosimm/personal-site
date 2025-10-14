@@ -1,4 +1,3 @@
-
 import js from "../../components/images/SVG/js.svg";
 import react from "../../components/images/SVG/react.svg";
 import tailwind from "../../components/images/SVG/tailwind.svg";
@@ -12,6 +11,10 @@ import craftChallenges from "../../components/images/projectImages/craftTracker/
 import craftOne from "../../components/images/projectImages/craftTracker/craft_one.png";
 import craftTwo from "../../components/images/projectImages/craftTracker/craft_two.png";
 import craftThree from "../../components/images/projectImages/craftTracker/craft_three.png";
+
+// Greenspace Images
+import greenspace from "../../components/images/projectImages/greenspace/greenspace_cover.png";
+import greenspaceView from "../../components/images/projectImages/greenspace/greenspace_view.png";
 
 // MemoryImages
 import memoryView from "../../components/images/projectImages/memoryGame/memory_view.png";
@@ -85,6 +88,26 @@ export const projects = [
     github: "https://github.com/nowosimm/craft-tracker",
     technologies: [react, vite, node],
   },
+    {
+    id: "greenspace",
+    link: "greenspace",
+    image: greenspaceView,
+    title: "Greenspace",
+    description:
+      "A houseplant management app that helps users track and care for their plants. Users can upload images, record care details, and schedule reminders for watering and other tasks. All user and plant data is stored in MongoDB, ensuring persistent and organized recordkeeping.",
+    features: [
+      "Upload and manage plant images with care notes and task details",
+      "Calendar-based reminders for watering and maintenance",
+      "MongoDB integration for storing user, plant, and schedule data",
+    ],
+    takeaways:
+      "This was a great challenge in creating a mock social media platform and being able to experience how the web of schema information interacts with each element. I really enjoyed mapping out the user functionality of the site and feel pleased with my results. I think this app really put into perspective the never-ending tasks complex projects seems to have and how to go about breaking down tasks into smaller chunks rather than getting overwhelmed at the big picture.",
+    summary:
+      "Personal plant care tracker that allows users to record watering and misting schedules, upload progress photos, and view their plant care history over time. ",
+    view: greenspace,
+    github: "https://github.com/nowosimm/greenspace",
+    technologies: [react, vite, node],
+  },
   {
     id: "memory-game",
     link: "memory-game",
@@ -131,7 +154,7 @@ export const projects = [
     challengesImage: stardewChallenges,
     image1: stardewOne,
     image2: stardewTwo,
-    github: "https://github.com/nowosimm/memory-game",
+    github: "https://github.com/nowosimm/stardew-guide",
     technologies: [js, vite],
   },
   {
@@ -154,7 +177,7 @@ export const projects = [
       "Mock blog application using MongoDB that allows users to create and publish posts, interact through comments, and experience the basic functionality of a full blogging platform.",
     view: blogView,
     challengesImage: blogChallenges,
-    github: "https://github.com/nowosimm/memory-game",
+    github: "https://github.com/nowosimm/mock-blog",
     technologies: [js, node, mongo],
   },
   {
