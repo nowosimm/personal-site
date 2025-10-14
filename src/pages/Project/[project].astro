@@ -3,7 +3,6 @@ import { icons } from "../../components/React Components/Icons.jsx";
 const ChevronRight = icons.chevronRight;
 const ChevronLeft = icons.chevronLeft;
 
-import HeaderLayout from "../../layouts/Header.astro";
 import { Image } from "astro:assets";
 import "../../styles/global.css";
 import { projects } from "../Data/projects.js";
@@ -33,10 +32,6 @@ const nextProject =
   projectIndex < projects.length - 1 ? projects[projectIndex + 1] : projects[0];
 ---
 
-<HeaderLayout title="About Me">
-  <!-- header -->
-</HeaderLayout>
-
 <div class="flex flex-col justify-center items-center
  mh-full scroll-link">
   <div class="flex flex-col w-full lg:flex-row">
@@ -59,7 +54,7 @@ const nextProject =
         </div>
 
         <div class="justify-center items-center text-left w-full">
-          <div class="flex my-7 text-sm/8">
+          <div class="flex my-7 ">
             {projectData.description}
           </div>
         </div>
@@ -83,7 +78,7 @@ const nextProject =
           Challenges
         </h2>
         <div class="border-1 border-terra-cotta w-full"></div>
-        <p class="flex text-sm/8 px-4 mt-3">{projectData.challenges}</p>
+        <p class="flex  px-4 mt-3">{projectData.challenges}</p>
       </div>
     </div>
 
@@ -92,7 +87,7 @@ const nextProject =
     >
       <h2 class="font-semibold text-terra-cotta text-lg lg:mb-3">Takeaways</h2>
       <div class="border-1 border-terra-cotta w-full"></div>
-      <p class="flex text-sm/8 px-4 my-3">{projectData.takeaways}</p>
+      <p class="flex  px-4 my-3">{projectData.takeaways}</p>
     </div>
   </div>
 
@@ -109,7 +104,7 @@ const nextProject =
       ) : null
     }
     <a
-      href="/Project"
+      href="/"
       class="flex bg-sweet-cream w-15 h-9 justify-center items-center mx-2 rounded-md hover:outline-2 hover:outline-terra-cotta text-sm"
       >Exit
     </a>
@@ -128,6 +123,16 @@ const nextProject =
 </div>
 
 <style>
+    @font-face {
+      font-family: "fancy";
+      src: url("/src/assets//Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf")
+        format("truetype");
+    }
+
+    body {
+      font-family: "fancy";
+    }
+  
   body {
     background-size: 20px 20px; /* Size of the grid cells */
     background-image:
@@ -148,6 +153,6 @@ const nextProject =
       0 25px,
       25px -25px,
       25px 0; /* Adjust positions for alignment */
-    height: 75px;
+    height: 50px;
   }
 </style>

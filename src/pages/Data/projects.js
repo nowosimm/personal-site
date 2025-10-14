@@ -1,3 +1,11 @@
+
+import js from "../../components/images/SVG/js.svg";
+import react from "../../components/images/SVG/react.svg";
+import tailwind from "../../components/images/SVG/tailwind.svg";
+import node from "../../components/images/SVG/node.svg";
+import vite from "../../components/images/SVG/vite.png";
+import mongo from "../../components/images/SVG/mongo.svg";
+
 // Craft Tracker Images
 import craftView from "../../components/images/projectImages/craftTracker/craft_view.png";
 import craftChallenges from "../../components/images/projectImages/craftTracker/craft_challenges.png";
@@ -23,7 +31,7 @@ import cvOne from "../../components/images/projectImages/cvBuilder/cv_one.png";
 import cvTwo from "../../components/images/projectImages/cvBuilder/cv_two.png";
 
 // Weather Images
-import weatherView from "../../components/images/projectImages/weatherApp/weather_cover.png";
+import weatherView from "../../components/images/projectImages/weatherApp/weather_view.png";
 import weatherChallenges from "../../components/images/projectImages/weatherApp/weather_challenges.png";
 
 // Etch-a-Sketch images
@@ -59,16 +67,23 @@ export const projects = [
     image: craftTracker,
     title: "Craft Tracker",
     description:
-      "Craft Tracker is a hobby and crafting social media page made to keep past projects all in one space and find + share inspiration between friends. I kind of wanted to mix the homemade feel of scrolling Etsy with the inspiration of Pinterest, but add the social component. I thought it was important for the user to be able to store details on materials, notes, links, and images all in one place to make it easier to reference in the future.",
-    challenges:
-      "Challenges I faced were related mostly to creating an intertwining schema of users, posts, likes and comments. I quickly learned it wouldn't be as simple as just having separate schemas in my Mongo database, but that I would need to incorporate virtual schemas to access all the data dependent on the current user and their data. In the routes I would then need to populate each of the schemas with the information I needed to fill out that call., ",
+      "A hobby and crafting social platform that blends the homemade charm of Etsy with the inspiration of Pinterest, while adding a strong social layer. Users can log project details, share ideas, and interact with other makers, with all data stored and organized in MongoDB.",
+    features: [
+      "User and project schemas with likes, comments, and profile data",
+      "Detailed project storage for notes, materials, links, and images",
+      "Interconnected MongoDB virtual schemas for efficient data retrieval",
+    ],
     takeaways:
       "This was a great challenge in creating a mock social media platform and being able to experience how the web of schema information interacts with each element. I really enjoyed mapping out the user functionality of the site and feel pleased with my results. I think this app really put into perspective the never-ending tasks complex projects seems to have and how to go about breaking down tasks into smaller chunks rather than getting overwhelmed at the big picture.",
+    summary:
+      "Mock social media page for crafter's and hobbyists to share their work. Users can add friends, like and comment on posts and store material information for later reference.",
     view: craftView,
     challengesImage: craftChallenges,
     image1: craftOne,
     image2: craftTwo,
     image3: craftThree,
+    github: "https://github.com/nowosimm/craft-tracker",
+    technologies: [react, vite, node],
   },
   {
     id: "memory-game",
@@ -76,14 +91,23 @@ export const projects = [
     image: memory,
     title: "Animal Crossing Memory Game",
     description:
-      "This was a project I wanted to work on inspired by seeing some pretty fun examples while scoring the internet for ideas. For my memory game, I chose the theme of Animal Crossing and was not able to find an API that matched my needs so a large chunk of time was spent gathering all the images. There were some fun challenges that I really enjoyed working through such as win conditions and randomizing. This was fun little project and the outcome is really cute!",
+      "A themed memory game inspired by Animal Crossing. Since no suitable API was available, all character images were collected manually. The project focuses on game logic, including randomized card layouts and win condition handling, resulting in a fun and visually charming experience.",
+    features: [
+      "Custom Animal Crossing dataset built from manually sourced images",
+      "Randomized card shuffling and match detection logic",
+      "Win condition handling with game state management",
+    ],
     challenges:
       "Challenges I faced were related mostly to creating an intertwining schema of users, posts, likes and comments. I quickly learned it wouldn't be as simple as just having separate schemas in my Mongo database, but that I would need to incorporate virtual schemas to access all the data dependent on the current user and their data. In the routes I would then need to populate each of the schemas with the information I needed to fill out that call.",
     takeaways:
       "It was really beneficial to see a game put together from start to finish. It was a great way to mindfully think about how every action affects the next, especially when considering what it takes to win or lose each round. Being able to think logically in that way was an eye opener, showing that this kind of problem solving isn’t so different from tackling more complex programming challenges. The ability to break each problem down into smaller pieces makes problem solving much less intimidating.",
+    summary:
+      "Interactive memory game that challenges players to remember and match previous clicks, tracks their progress with a running high score, and includes functionality to start fresh or restart a game.",
     view: memoryView,
     challengesImage: memoryChallenges,
     image1: memoryOne,
+    github: "https://github.com/nowosimm/memory-game",
+    technologies: [react, vite],
   },
   {
     id: "stardew-guide",
@@ -91,15 +115,24 @@ export const projects = [
     image: stardew,
     title: "Stardew Valley Recipe Guide",
     description:
-      "After much frustration cross referencing wiki pages, Reddit subs and personal notes trying to find and record every item needed to craft recipes in Stardew Valley, I decided to make this tracker to do it all. Items are shown in categories that can be filtered by season. Each items are given counters to allow users to easily track how many have been gathered and once the item is fully collected, the cards background turns green for easy visual sorting.",
+      "Born out of the frustration of cross-referencing wikis, Reddit threads, and personal notes, this tracker streamlines recipe management for Stardew Valley. Items are organized into categories with seasonal filters, counters track collection progress, and completed items automatically highlight for quick visual reference.",
+    features: [
+      "Categorized item lists with seasonal filtering",
+      "Counters for tracking quantities of collected items",
+      "Dynamic card states that turn green once requirements are met",
+    ],
     challenges:
       "There were a few challenges I encountered during the course of making this guide. The first being the only way to get the information was via the Wiki page making I would have to gather all of the data myself. Thinking ChatGPT would be of assistance, I quickly realized it was mining false information and just making a lot of stuff up, meaning I would be doing it the old-fashioned way. The next challenge I encountered was filters and sub-filters to be able to effectively sort information. It was a good challenge in thinking beyond just one layer of filtering and looking at all the possible combinations that could be sorted.",
     takeaways:
       "I always hear that using ChatGPT should be avoided, and this was the project that really confirmed that for me. When I had used it in the past, it was always on topics I was not as confident in, so being able to recognize mistakes is not as likely. It took me already knowing the correct answer and just trying to use it to be more efficient to fully understand how common it is to produce incorrect responses. ",
+    summary:
+      "Data log site that tracks every ingredient needed to achieve the Gourmet Chef milestone, with features for sorting by season and ingredient type to make planning and progress tracking easier.",
     view: stardewView,
     challengesImage: stardewChallenges,
     image1: stardewOne,
     image2: stardewTwo,
+    github: "https://github.com/nowosimm/memory-game",
+    technologies: [js, vite],
   },
   {
     id: "mock-blog",
@@ -107,13 +140,22 @@ export const projects = [
     image: mockBlog,
     title: "Mock Blog Project",
     description:
-      "Finally ready to start making more complex projects using MongoDB, I wanted to create a mock blog as I thought it would bet realistic to have an application with users, likes, comments and posts. This was a great challenge in setting up those relationships and using passport authentication in something more complex.",
+      "A full-stack blog application built to explore more complex MongoDB relationships. The project supports users, posts, likes, and comments, with Passport.js handling authentication. This project was a valuable exercise in designing relational data structures and implementing secure user flows.",
+    features: [
+      "User authentication and session handling with Passport.js",
+      "MongoDB schemas for users, posts, comments, and likes",
+      "Interconnected data models to manage relationships between entities",
+    ],
     challenges:
       "There were a lot of complexities with this project as it was my first time using MongoDB in a more complex way. It was my first time creating a full application using passport to store login information, and creating routes to send that data and setting up passport correctly proved to be a challenge. This project made me realize how important it is to put imports in the correct order and how much of a headache that can cause if just one item is out of place.",
     takeaways:
       "Learning how to use passport authenticate with MongoDB deemed challenged, yet once it was properly set up, made the storing of user login information much more manageable. It was really fun to see how likes and comments updated in real time and would change based on who the current user was.",
+    summary:
+      "Mock blog application using MongoDB that allows users to create and publish posts, interact through comments, and experience the basic functionality of a full blogging platform.",
     view: blogView,
     challengesImage: blogChallenges,
+    github: "https://github.com/nowosimm/memory-game",
+    technologies: [js, node, mongo],
   },
   {
     id: "to-do",
@@ -121,41 +163,59 @@ export const projects = [
     image: toDoList,
     title: "To-Do List App",
     description:
-      "Wanting to create a To-Do app, I started to outline what basic requirements I wanted it to have. Outside of the basic add, update, and delete functions, I knew I wanted the information to store on re-load and be dependent on the users computer. Unsure of how to achieve this, I found myself exploring local storage options and was able to incorporate the functionality into this app.",
+      "A lightweight task management application built with core CRUD functionality. To ensure persistence across sessions without a backend, the app leverages browser local storage to save user data directly on the client’s machine. This project was a great introduction to handling state and persistence outside of a database.",
     view: toDoView,
+    features: [
+      "Add, update, and delete tasks in real-time",
+      "Data persistence using browser local storage",
+      "Minimal and responsive interface for simple task management",
+    ],
     challenges:
       "This being my first project using local storage, I spent a lot of time researching and trying to get a better understanding on how to properly use this function. I found it to be pretty straightforward concept and did not have much trouble getting it set up. All I would need to do was create a saveProjects() function that handled grabbing and sending the information to the local storage so when the page reloaded, all the entered data was still there. ",
+    summary:
+      "To-do task list application that lets users organize tasks into specific projects or view them all together, with sorting options by due date to help manage priorities more effectively",
     challengesImage: toDoChallenges,
     takeaways:
       "This was a great project to introduce local storage and opened the doors to being able to actually save information that has been entered. I found the set up to be pretty straightforward and enjoyed how this project has simple bones yet the opportunity to learn about more concepts and their usage.",
+    github: "https://github.com/nowosimm/ToDo",
+    technologies: [js],
   },
-  {
-    id: "etch-a-sketch",
-    id: "linkch-a-sketch",
-    image: sketchApp,
-    title: "Etch-A-Sketch Clone",
-    description:
-      "I set out to create an Etch-a-Sketch board with different color and size options for the user to play with. It was a fun project to work on and was good practice in using functions I don't find myself needing often, like using the mousedown feature. ",
-    challenges:
-      "I had already worked out some of the basic setup required in previous projects such as creating grids  and different options for the users to select. Using mousedown was something I did not have as much experience in and had to do some research on how to implement in the way I wanted. I found for this project it was best to start the drawing feature on mousedown and end it on mouseup.",
-    takeaways:
-      "This was a project that was just fun to make and incorporated some things I already knew with some elements that were fun to revisit. I think these types of re-creation projects are a great way to give a mock experience of working on an end goal with a client where you have an idea of what you are building towards and having to work within those boundaries.",
-    view: sketchView,
-    challengesImage: sketchChallenges,
-  },
+  // {
+  //   id: "etch-a-sketch",
+  //   id: "linkch-a-sketch",
+  //   image: sketchApp,
+  //   title: "Etch-A-Sketch Clone",
+  //   description:
+  //     "I set out to create an Etch-a-Sketch board with different color and size options for the user to play with. It was a fun project to work on and was good practice in using functions I don't find myself needing often, like using the mousedown feature. ",
+  //   challenges:
+  //     "I had already worked out some of the basic setup required in previous projects such as creating grids  and different options for the users to select. Using mousedown was something I did not have as much experience in and had to do some research on how to implement in the way I wanted. I found for this project it was best to start the drawing feature on mousedown and end it on mouseup.",
+  //   takeaways:
+  //     "This was a project that was just fun to make and incorporated some things I already knew with some elements that were fun to revisit. I think these types of re-creation projects are a great way to give a mock experience of working on an end goal with a client where you have an idea of what you are building towards and having to work within those boundaries.",
+  //   view: sketchView,
+  //   challengesImage: sketchChallenges,
+  // },
   {
     id: "weather-app",
     link: "weather-app",
     image: weatherApp,
     title: "Weather App",
     description:
-      "This was a project suggested by The Odin Project in their JavaScript course. The goal of the project was to introduce API's and how to fetch the data and use it in a readable way. This was a great project as it required utilizing the Async Await function for grabbing the API key, and as my first time using this function, I found it to be a great challenge. I never knew that API's were a thing prior to this project, so I was happy to add it to my arsenal!",
+      "A JavaScript project inspired by The Odin Project curriculum, designed to practice working with APIs. The app fetches and displays real-time weather data, requiring the use of async/await for handling asynchronous API calls. This was my first exposure to APIs, making it both a challenge and a rewarding learning experience.",
+    features: [
+      "Fetch and display live weather data from an external API",
+      "Async/await implementation for handling asynchronous requests",
+      "Search functionality for retrieving weather by city",
+    ],
     challenges:
       "I found the initial setup of getting my API running was quite challenging from finding the correct documentation to getting Async Await up and running. I have found that documentation sometimes leaves things up to interpretation and as someone who had such a base level of knowledge, filling in those blanks sometimes leaves me lost and set out on a wild goose chase on programming forums. Once the API was running, I found the actual data mining to be really straight forward!",
     takeaways:
       "Having this new super power of being able to grab information about almost everything is very exciting! Gone are the days of painstakingly gathering images and information and sorting it in my applications. This really allowed me to work on some fun projects and feel less confined to what I was able to create.",
+    summary:
+      "Weather application that pulls real-time data from an API to display a three-day forecast, complete with weather icons, and includes a search feature for looking up different cities.",
     view: weatherView,
     challengesImage: weatherChallenges,
+    github: "https://github.com/nowosimm/weather-app",
+    technologies: [js, node, mongo, vite],
   },
   {
     id: "shopping-cart",
@@ -163,13 +223,22 @@ export const projects = [
     image: shoppingCart,
     title: "Mock Shopping Cart",
     description:
-      "Wanting to create a mock site to practice site functionality, I decided that a shopping cart would be a good place to start. It was great practice to see how elements of an application interact with each other and how to create an enjoyable user experience. I used Tailwind for their pre-made UI components for this application and while I enjoyed the options these components offered, I ultimately struggled with setting them up and with making changed needed for the site.",
+      "A practice e-commerce application built to explore site functionality and user interaction. This project focused on managing product listings, cart state, and total calculations while creating a smooth user experience. Tailwind CSS was used for styling with pre-built UI components, providing both flexibility and challenges in customization.",
+    features: [
+      "Add multiple products to the cart and view a running total",
+      "Interactive cart state management for an improved shopping flow",
+      "Styled with Tailwind CSS using customizable pre-built UI components",
+    ],
     challenges:
       "This was my first time using Tailwind for UI elements and I found it to be a really difficult experience. I really enjoy using Tailwind for normal CSS styling, however, when using it for their pre-made components I found the code to be overwhelming and over-complicated. Since this project, I have discovered that I enjoy using Mantine's components due to their simplicity and ease of use.",
     takeaways:
       "I am glad that I tried using Tailwind UI components as it led me to find other options such as Mantine that I enjoy using much more. While I don't like to solely rely on these builders, it is great to use when I need a more complicated component or to see how accessibility should be properly used. ",
+    summary:
+      "Mock shopping page that allows users to browse products, add multiple items to a cart, and view an updated total, simulating the core functionality of an e-commerce site.",
     view: shoppingCartView,
     challengesImage: shoppingCartChallenges,
+    github: "https://github.com/nowosimm/shopping-cart",
+    technologies: [react, node, mongo, tailwind],
   },
   {
     id: "resume-builder",
@@ -177,14 +246,23 @@ export const projects = [
     image: CVbuilder,
     title: "Resume Builder",
     description:
-      "This was a project suggested though The Odin Project JavaScript coursework. The task was to create a basic resume builder using state to update entry fields. This was my first big project using state properties so there was a learning curve involved with figure out how the relationships of all the elements would work. It game me some great foundational knowledge to build off of for future projects.",
+      "A resume-building application inspired by The Odin Project JavaScript curriculum. This project focused on using state to dynamically update entry fields, giving me a strong foundation in state management and UI relationships. It was a valuable first step in creating interactive, data-driven applications.",
+    features: [
+      "Dynamic form inputs that update CV entries in real time",
+      "State management for controlling form data and display",
+      "Customizable layout for CV presentation",
+    ],
     challenges:
       "My first application of useState() gave me a few challenges to work through. At first, it was hard to wrap my head around the idea of passing stored state values down the line to populate inputs in other components. It took a lot of trial and error to get the data passed correctly but I think that was a really important step in getting a better understanding of the concept.",
     takeaways:
       "It was really exciting to see how much more could be accomplished with a basic understanding of useState() properties. This was a turning point for me in my journey as it opened the doors to so much more complex and interesting projects. Looking back now it is hard to imagine creating any application without using state.",
+    summary:
+      "CV builder application that allows users to input their education, work experience, and personal information, customize fonts, and toggle which details are viewable.",
     view: cvView,
     challengesImage: cvChallenges,
     image1: cvOne,
     image2: cvTwo,
+    github: "https://github.com/nowosimm/cv-maker",
+    technologies: [vite, react],
   },
 ];

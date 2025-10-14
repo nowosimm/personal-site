@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import HeaderLayout from "../layouts/Header.astro";
-import NavBar from "../layouts/NavBar.astro";
 import { Image } from "astro:assets";
 import aboutMeImage from "../components/images/homePage.png";
 import css from "../components/images/SVG/css.svg";
@@ -10,12 +9,14 @@ import js from "../components/images/SVG/js.svg";
 import react from "../components/images/SVG/react.svg";
 import tailwind from "../components/images/SVG/tailwind.svg";
 import node from "../components/images/SVG/node.svg";
+
 import { projects } from "../pages/Data/projects.js";
-import github from "../components/images/SVG/github.svg";
+import Projects from "./React Components/Project";
 
 import { icons } from "../components/React Components/Icons.jsx";
 const resize = icons.resize;
 const singlePage = icons.singlePage;
+const Email = icons.email;
 
 const aboutMe = [
   {
@@ -45,60 +46,69 @@ const skills = [
 ];
 ---
 
-<!-- <HeaderLayout title="About Me">
-</HeaderLayout>
-<div class="flex flex-col justify-center items-center
- mh-full scroll-link">
-  <div class="flex flex-col w-full md:flex-row">
-    <div class="flex justify-center items-center py-10 md:w-1/2">
-      <Image
-        src={aboutMeImage}
-        class="w-sm h-auto border-2 border-terra-cotta rounded-2xl"
-        alt="A photo of me in front of Lake Michigan"
-      />
-    </div>
+<div class="checker-bg text-lg">
+  <div class="w-full min-h-screen">
+    <!-- Big Screen -->
+    <div class="hidden lg:block">
+      <div
+        class="flex flex-col w-full justify-center items-center md:flex-row bg-pale-pink p-5"
+      >
+        <div class="p-5 flex justify-center p-auto items-stretch">
+          <div class="flex flex-col grow px-5 w-xl max-w-xl p-5">
+            <div>
+              <h1 class="text-3xl font-bold text-left w-full mb-1">
+                Hi! I'm Madison
+              </h1>
+              <div class="flex text-md/8 mb-2">
+                Front-End Web Developer based in Cincinnati, Ohio.
+              </div>
+              <div
+                class="flex checkerboard-small rounded-md justify-center items-center mx-auto"
+              >
+              </div>
+            </div>
+            <div class="flex flex-col grow justify-around mt-5">
+              <div>
+                <h2 class="text-md font-bold mb-1">About</h2>
+                <p>
+                  I am a self-taught programmer with a passion for front-end
+                  development and design. I graduated from the University of
+                  Cincinnati with a degree in fashion design which gives me a
+                  unique perspective on combining creativity with technical
+                  problem-solving. Beyond coding, I've run five half and one
+                  full marathon, and enjoy traveling, reading, and cozy gaming
+                  in my free time.
+                </p>
+              </div>
+              <div>
+                <h2 class="text-md font-extrabold mb-1">My Journey</h2>
+                <p>
+                  I began my journey with The Odin Project, completing the
+                  Foundations and JavaScript courses. Through this, I developed
+                  personal projects and discovered my passion for front-end web
+                  design. I am now eager to continue growing my skills and open
+                  to opportunities that will help me advance my career and
+                  learning.
+                </p>
+              </div>
+            </div>
+          </div>
 
-    <div
-      class="p-5 flex flex-col justify-center items-center bg-sweet-cream border-s-2 border-terra-cotta md:w-1/2 md:mt-0"
-    >
-    <div class="px-5 max-w-xl">
-      <h1 class="text-2xl font-bold text-left w-full">Hi! My name is Madison</h1>
-      <div class="justify-center items-center text-left w-full">
-        <div class="flex my-7 text-sm/8">
-          I am a graduate of The University Of Cincinnati where I majored in
-          Fashion Design and minored in Marketing. During my final year at
-          school, I realized I craved more problem solving and functional
-          applications in my work then fashion design was able to give me. After
-          exploring programming, I quickly fell in love with the process and
-          thinking required and have been learning ever since!
+          <div class="flex justify-center items-center md:w-1/2">
+            <Image
+              src={aboutMeImage}
+              class="w-sm h-auto border-2 border-terra-cotta rounded-xl"
+              alt="A photo of me in front of Lake Michigan"
+            />
+          </div>
         </div>
       </div>
     </div>
-
-    </div>
-  </div>
-  <div class="checkerboard-gradient w-full"></div>
-
-  <div class="flex flex-col justify-center items-center w-full pt-5 ">
-    {
-      aboutMe.map((p) => (
-        <div class="bg-sweet-cream rounded-lg p-8 m-5 min-w-md max-w-2xl ">
-            <h2 class="font-semibold text-terra-cotta text-lg md:mb-3">
-              {p.title}
-            </h2>
-            <div class="border-1 border-terra-cotta w-full"></div>
-            <p class="flex text-sm/8 px-4 mt-3">{p.content}</p>
-        </div>
-      ))
-    }
-  </div>
-</div> -->
-<div class="checker-bg text-lg">
-  <div class="w-full min-h-screen">
-    <div
-      class="flex flex-col w-full justify-center items-center md:flex-row bg-pale-pink p-5"
-    >
-      <div class="p-5 flex justify-center p-auto items-stretch">
+    <!-- Mobile Screen -->
+    <div class="block lg:hidden">
+      <div
+        class="flex w-full justify-center items-center bg-pale-pink p-5 p-auto"
+      >
         <div class="flex flex-col grow px-5 w-xl max-w-xl p-5">
           <div>
             <h1 class="text-3xl font-bold text-left w-full mb-1">
@@ -108,14 +118,21 @@ const skills = [
               Front-End Web Developer based in Cincinnati, Ohio.
             </div>
             <div
-              class="flex checkerboard-small rounded-md justify-center items-center mx-auto"
+              class="flex checkerboard-small rounded-md justify-center items-center mx-auto mb-8"
             >
             </div>
           </div>
-          <div class="flex flex-col grow justify-around mt-8">
+          <div class="flex justify-center items-center">
+            <Image
+              src={aboutMeImage}
+              class="w-sm h-auto border-2 border-terra-cotta rounded-xl mb-5"
+              alt="A photo of me in front of Lake Michigan"
+            />
+          </div>
+          <div class="flex flex-col grow justify-around mt-5">
             <div>
               <h2 class="text-md font-bold mb-1">About</h2>
-              <p>
+              <p class="mb-3">
                 I am a self-taught programmer with a passion for front-end
                 development and design. I graduated from the University of
                 Cincinnati with a degree in fashion design which gives me a
@@ -126,8 +143,8 @@ const skills = [
               </p>
             </div>
             <div>
-              <h2 class="text-md font-extrabold mb-1">My Journey</h2>
-              <p>
+              <h2 class="text-md font-extrabold mb-">My Journey</h2>
+              <p class="mb-6">
                 I began my journey with The Odin Project, completing the
                 Foundations and JavaScript courses. Through this, I developed
                 personal projects and discovered my passion for front-end web
@@ -137,64 +154,39 @@ const skills = [
             </div>
           </div>
         </div>
-        <div></div>
-        <div class="flex justify-center items-center md:w-1/2">
-          <Image
-            src={aboutMeImage}
-            class="w-sm h-auto border-2 border-terra-cotta rounded-xl"
-            alt="A photo of me in front of Lake Michigan"
-          />
+      </div>
+    </div>
+    <!-- <div class="checkerboard-small"></div> -->
+
+    <div
+      class="checkerboard-large w-xs mx-auto flex items-center justify-center rounded-md shadow-lg mt-20 mb-5"
+    >
+      <div
+        class="bg-pale-pink flex items-center justify-center mx-auto text-xl py-1 px-8 h-[40px] w-xs mb-4 rounded-t-md font-bold"
+      >
+        Projects
+      </div>
+    </div>
+
+    <Projects client:load projects={projects} />
+  </div>
+
+    <div class="flex flex-col justify-center items-center my-15">
+      <div
+        class="checkerboard-large w-xs mx-auto flex items-center justify-center my-10 rounded-md shadow-lg"
+      >
+        <div
+          class="bg-pale-pink flex items-center justify-center mx-auto text-xl py-1 px-8 h-[40px] w-xs mb-4 rounded-t-md font-bold"
+        >
+          Skills
         </div>
       </div>
-    </div>
-    <div>
-      <div class="flex checkerboard-large justify-center items-center mx-auto">
-      </div>
-      <div class="flex justify-center my-10">
-        <h2
-          class="bg-pale-pink h-[50px] w-[270px] rounded-[50%] flex items-center justify-center shadow-sm font-bold"
-        >
-          My Projects
-        </h2>
-      </div>
-      <div class="flex flex-col justify-center items-center">
-        {
-          projects.map((p) => (
-            <div class="flex justify-center  bg-pale-pink p-5 m-2 rounded-sm items-stretch shadow-sm">
-              <Image
-                src={p.view}
-                class="w-75 h-75  rounded-sm shadow-sm"
-                alt="text"
-              />
-              <div class="ml-6 flex flex-col justify-between  ">
-                <div class="flex flex-col max-w-lg">
-                  <h2 class="font-bold my-2 ">{p.title}</h2>
-                  <p>{p.description}</p>
-                </div>
-                <button class="flex bg-white p-1 rounded-sm mt-2 max-w-[90px] justify-center items-center shadow-sm">
-                  <Image src={github} alt="Github logo" class="w-5 h-5 mr-1" />
-                  Github
-                </button>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-    <div class="flex flex-col justify-center items-center">
-      <div class="flex justify-center my-10">
-        <h2
-          class="bg-pale-pink h-[50px] w-[270px] rounded-[50%] flex items-center justify-center shadow-sm font-bold"
-        >
-          My Skills
-        </h2>
-      </div>
-      <div class="flex">
+      <div class="flex flex-wrap justify-center items-center">
         {
           skills.map((p) => (
             <Image
               src={p.icon}
-              class="w-20 h-20 bg-white p-2 rounded-sm m-2 border-2 border-terra-cotta"
+              class="w-20 h-20 bg-pale-pink shadow-sm p-2 rounded-sm m-2"
               alt={p.name}
             />
           ))
@@ -202,68 +194,82 @@ const skills = [
       </div>
     </div>
 
-      <div class="flex justify-center my-10">
-        <h2
-          class="bg-pale-pink h-[50px] w-[270px] rounded-[50%] flex items-center justify-center shadow-sm font-bold"
-        >
-          Let's Connect!
-        </h2>
+  <div class="flex flex-col pb-15">
+    <div
+      class="checkerboard-large w-xs mx-auto flex items-center justify-center my-10 rounded-md shadow-lg"
+    >
+      <div
+        class="bg-pale-pink flex items-center justify-center mx-auto text-xl py-1 px-8 h-[40px] w-xs mb-4 rounded-t-md font-bold"
+      >
+        Lets Connect!
       </div>
+    </div>
+    <div
+      class="bg-pale-pink w-xl mx-auto flex flex-col gap-2 justify-center items-center p-4 shadow-sm rounded-sm mb-10"
+    >
+      <p class="text-center">
+        I would love to get in touch! Please reach out directly to my email.
+      </p>
+      <div class="flex justify-center items-center ">
+        <Email size={25} stroke={1.5} />
+        <p class="ml-1 font-semibold">madisonnowo@gmail.com</p>
+      </div>
+    </div>
   </div>
-
-  <style>
-    .checkerboard-small {
-      background-color: #ed9b83; /* Light color for the base */
-      background-image: linear-gradient(45deg, #a75c3a 25%, transparent 25%),
-        linear-gradient(-45deg, #a75c3a 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #a75c3a 75%),
-        linear-gradient(-45deg, transparent 75%, #a75c3a 75%);
-      background-size: 50px 50px; /* Size of each square in the pattern */
-      background-position:
-        0 0,
-        0 25px,
-        25px -25px,
-        25px 0; /* Adjust positions for alignment */
-      height: 10px;
-    }
-
-    .checkerboard-large {
-      background-color: #ed9b83; /* Light color for the base */
-      background-image: linear-gradient(45deg, #a75c3a 25%, transparent 25%),
-        linear-gradient(-45deg, #a75c3a 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #a75c3a 75%),
-        linear-gradient(-45deg, transparent 75%, #a75c3a 75%);
-      background-size: 50px 50px; /* Size of each square in the pattern */
-      background-position:
-        0 0,
-        0 25px,
-        25px -25px,
-        25px 0; /* Adjust positions for alignment */
-      height: 50px;
-    }
-
-    .checker-bg {
-      background-size: 20px 20px; /* Size of the grid cells */
-      background-image: linear-gradient(to right, #FAF4E7 1px, transparent 1px),
-        linear-gradient(to bottom, #faf4e7 1px, transparent 1px);
-    }
-  </style>
-
-  <style>
-    @font-face {
-      font-family: "simple";
-      src: url("/src/assets/Lexend/Lexend-VariableFont_wght.ttf")
-        format("truetype");
-    }
-
-    @font-face {
-      font-family: "fancy";
-      src: url("/src/assets//Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf")
-        format("truetype");
-    }
-
-    body {
-      font-family: "fancy";
-    }
-  </style>
 </div>
+
+<style>
+  .checkerboard-small {
+    background-color: #ed9b83; /* Light color for the base */
+    background-image: linear-gradient(45deg, #a75c3a 25%, transparent 25%),
+      linear-gradient(-45deg, #a75c3a 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #a75c3a 75%),
+      linear-gradient(-45deg, transparent 75%, #a75c3a 75%);
+    background-size: 50px 50px; /* Size of each square in the pattern */
+    background-position:
+      0 0,
+      0 25px,
+      25px -25px,
+      25px 0; /* Adjust positions for alignment */
+    height: 8px;
+  }
+
+  .checkerboard-large {
+    background-color: #ed9b83; /* Light color for the base */
+    background-image: linear-gradient(45deg, #a75c3a 25%, transparent 25%),
+      linear-gradient(-45deg, #a75c3a 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #a75c3a 75%),
+      linear-gradient(-45deg, transparent 75%, #a75c3a 75%);
+    background-size: 50px 50px; /* Size of each square in the pattern */
+    background-position:
+      0 0,
+      0 25px,
+      25px -25px,
+      25px 0; /* Adjust positions for alignment */
+    height: 40px;
+  }
+
+  .checker-bg {
+    background-size: 20px 20px; /* Size of the grid cells */
+    background-image: linear-gradient(to right, #faf4e7 1px, transparent 1px),
+      linear-gradient(to bottom, #faf4e7 1px, transparent 1px);
+  }
+</style>
+
+<style>
+  @font-face {
+    font-family: "simple";
+    src: url("/src/assets/Lexend/Lexend-VariableFont_wght.ttf")
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: "fancy";
+    src: url("/src/assets//Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf")
+      format("truetype");
+  }
+
+  body {
+    font-family: "fancy";
+  }
+</style>
