@@ -46,12 +46,11 @@ const skills = [
 ];
 ---
 
-<div class="checker-bg text-lg">
-  <div class="w-full min-h-screen">
+<div class="checker-bg text-lg w-full">
     <!-- Big Screen -->
     <div class="hidden lg:block">
       <div
-        class="flex flex-col w-full justify-center items-center md:flex-row bg-pale-pink p-5"
+        class="flex flex-col w-full justify-center items-center md:flex-row bg-pale-pink"
       >
         <div class="p-5 flex justify-center p-auto items-stretch">
           <div class="flex flex-col grow px-5 w-xl max-w-xl p-5">
@@ -105,11 +104,11 @@ const skills = [
       </div>
     </div>
     <!-- Mobile Screen -->
-    <div class="block lg:hidden">
+    <div class="block lg:hidden ">
       <div
-        class="flex w-full justify-center items-center bg-pale-pink p-5 p-auto"
+        class="flex w-full justify-center items-center bg-pale-pink"
       >
-        <div class="flex flex-col grow px-5 w-xl max-w-xl p-5">
+        <div class="flex flex-col w-full sm:max-w-xl px-5 p-5">
           <div>
             <h1 class="text-3xl font-bold text-left w-full mb-1">
               Hi! I'm Madison
@@ -169,9 +168,9 @@ const skills = [
     </div>
 
     <Projects client:load projects={projects} />
-  </div>
 
-    <div class="flex flex-col justify-center items-center my-15">
+
+    <div class="flex flex-col justify-center items-center my-15 ">
       <div
         class="checkerboard-large w-xs mx-auto flex items-center justify-center my-10 rounded-md shadow-lg"
       >
