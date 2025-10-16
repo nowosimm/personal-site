@@ -201,26 +201,25 @@ const skills = [
       </div>
     </div>
     <div
-      class="bg-pale-pink flex flex-col gap-2 justify-center items-center p-4 mx-auto mb-10 shadow-sm rounded-sm mb-10"
+      class="bg-pale-pink flex flex-col gap-2 justify-center items-center p-4 mx-auto shadow-sm rounded-sm mb-10"
     >
       <p class="text-center">
         I would love to get in touch! Please reach out directly to my email.
       </p>
-      <div
-        id="email-copy"
-        class="relative flex justify-center items-center cursor-pointer group select-none"
-      >
-        <Copy size={25} stroke={1.5} />
-        <p class="ml-1 font-semibold hover:underline">madisonnowo@gmail.com</p>
+<div 
+  id="email-copy"
+  class="relative flex justify-center items-center cursor-pointer select-none"
+>
+  <Copy size={25} stroke={1.5} />
+  <p class="ml-1 font-semibold hover:underline">madisonnowo@gmail.com</p>
 
-        <!-- Tooltip -->
-        <span
-          id="tooltip"
-          class="absolute top-full mt-6 px-2 py-1 rounded-md text-sm text-black bg-salmon opacity-0 group-hover:opacity-100 transition-all duration-200"
-        >
-          Click to copy
-        </span>
-      </div>
+  <span
+    id="tooltip"
+    class="absolute top-full mt-10 px-2 py-1 rounded-md  bg-salmon opacity-0 pointer-events-none transition-all duration-300 shadow-md"
+  >
+    Copied!
+  </span>
+</div>
     </div>
   </div>
 </div>
@@ -281,18 +280,22 @@ const skills = [
   }
 </style>
 
+
 <script>
   const emailDiv = document.getElementById("email-copy");
   const tooltip = document.getElementById("tooltip");
 
   emailDiv.addEventListener("click", async () => {
     await navigator.clipboard.writeText("madisonnowo@gmail.com");
-    tooltip.textContent = "Copied!";
-    tooltip.classList.add("bg-green-600");
 
+    // Show tooltip
+    tooltip.classList.remove("opacity-0");
+    tooltip.classList.add("opacity-100");
+
+    // Hide again after 1.5s
     setTimeout(() => {
-      tooltip.textContent = "Click to copy";
-      tooltip.classList.remove("bg-green-600");
+      tooltip.classList.add("opacity-0");
+      tooltip.classList.remove("opacity-100");
     }, 1500);
   });
 </script>
