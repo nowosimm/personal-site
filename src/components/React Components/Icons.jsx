@@ -1,5 +1,5 @@
 // src/components/Icon.jsx
-import { IconArrowNarrowRight, IconArrowNarrowLeft, IconX, IconChevronLeft, IconChevronRight, IconResize, IconAlignBoxLeftTop, IconMail} from "@tabler/icons-react";
+import { IconArrowNarrowRight, IconArrowNarrowLeft, IconX, IconChevronLeft, IconChevronRight, IconResize, IconAlignBoxLeftTop, IconMail, IconCopy} from "@tabler/icons-react";
 
 export const icons = {
   rightArrow: IconArrowNarrowRight,
@@ -10,6 +10,7 @@ export const icons = {
   resize: IconResize,
   singlePage: IconAlignBoxLeftTop,
   email: IconMail,
+  copy: IconCopy,
 
 
 };

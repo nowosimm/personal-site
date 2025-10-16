@@ -17,6 +17,7 @@ import { icons } from "../components/React Components/Icons.jsx";
 const resize = icons.resize;
 const singlePage = icons.singlePage;
 const Email = icons.email;
+const Copy = icons.copy;
 
 const aboutMe = [
   {
@@ -47,68 +48,13 @@ const skills = [
 ---
 
 <div class="checker-bg text-lg">
-    <!-- Big Screen -->
-    <div class="hidden lg:block">
-      <div
-        class="flex flex-col w-full justify-center items-center md:flex-row bg-pale-pink" 
-      >
-        <div class="p-5 flex justify-center p-auto items-stretch">
-          <div class="flex flex-col grow px-5 w-xl max-w-xl p-5">
-            <div>
-              <h1 class="text-3xl font-bold text-left w-full mb-1">
-                Hi! I'm Madison
-              </h1>
-              <div class="flex text-md/8 mb-2">
-                Front-End Web Developer based in Cincinnati, Ohio.
-              </div>
-              <div
-                class="flex checkerboard-small rounded-md justify-center items-center mx-auto"
-              >
-              </div>
-            </div>
-            <div class="flex flex-col grow justify-around mt-5 ">
-              <div>
-                <h2 class="text-md font-bold mb-1">About</h2>
-                <p>
-                  I am a self-taught programmer with a passion for front-end
-                  development and design. I graduated from the University of
-                  Cincinnati with a degree in fashion design which gives me a
-                  unique perspective on combining creativity with technical
-                  problem-solving. Beyond coding, I've run five half and one
-                  full marathon, and enjoy traveling, reading, and cozy gaming
-                  in my free time.
-                </p>
-              </div>
-              <div>
-                <h2 class="text-md font-extrabold mb-1">My Journey</h2>
-                <p>
-                  I began my journey with The Odin Project, completing the
-                  Foundations and JavaScript courses. Through this, I developed
-                  personal projects and discovered my passion for front-end web
-                  design. I am now eager to continue growing my skills and open
-                  to opportunities that will help me advance my career and
-                  learning.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex justify-center items-center md:w-1/2">
-            <Image
-              src={aboutMeImage}
-              class="w-sm h-auto border-2 border-terra-cotta rounded-xl"
-              alt="A photo of me in front of Lake Michigan"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile Screen -->
-    <div class="block lg:hidden ">
-      <div
-        class="flex w-full justify-center items-center bg-pale-pink"
-      >
-        <div class="flex flex-col grow w-xl max-w-xl p-10">
+  <!-- Big Screen -->
+  <div class="hidden lg:block">
+    <div
+      class="flex flex-col w-full justify-center items-center md:flex-row bg-pale-pink"
+    >
+      <div class="p-5 flex justify-center p-auto items-stretch">
+        <div class="flex flex-col grow px-5 w-xl max-w-xl p-5">
           <div>
             <h1 class="text-3xl font-bold text-left w-full mb-1">
               Hi! I'm Madison
@@ -117,21 +63,14 @@ const skills = [
               Front-End Web Developer based in Cincinnati, Ohio.
             </div>
             <div
-              class="flex checkerboard-small rounded-md justify-center items-center mx-auto mb-8"
+              class="flex checkerboard-small rounded-md justify-center items-center mx-auto"
             >
             </div>
-          </div>
-          <div class="flex justify-center items-center">
-            <Image
-              src={aboutMeImage}
-              class="w-sm h-auto border-2 border-terra-cotta rounded-xl mb-5"
-              alt="A photo of me in front of Lake Michigan"
-            />
           </div>
           <div class="flex flex-col grow justify-around mt-5">
             <div>
               <h2 class="text-md font-bold mb-1">About</h2>
-              <p class="mb-3">
+              <p>
                 I am a self-taught programmer with a passion for front-end
                 development and design. I graduated from the University of
                 Cincinnati with a degree in fashion design which gives me a
@@ -142,8 +81,8 @@ const skills = [
               </p>
             </div>
             <div>
-              <h2 class="text-md font-extrabold mb-">My Journey</h2>
-              <p class="mb-6">
+              <h2 class="text-md font-extrabold mb-1">My Journey</h2>
+              <p>
                 I began my journey with The Odin Project, completing the
                 Foundations and JavaScript courses. Through this, I developed
                 personal projects and discovered my passion for front-end web
@@ -153,45 +92,103 @@ const skills = [
             </div>
           </div>
         </div>
+
+        <div class="flex justify-center items-center md:w-1/2">
+          <Image
+            src={aboutMeImage}
+            class="w-sm h-auto border-2 border-terra-cotta rounded-xl"
+            alt="A photo of me in front of Lake Michigan"
+          />
+        </div>
       </div>
     </div>
-    <!-- <div class="checkerboard-small"></div> -->
+  </div>
+  <!-- Mobile Screen -->
+  <div class="block lg:hidden">
+    <div class="flex w-full justify-center items-center bg-pale-pink">
+      <div class="flex flex-col grow w-xl max-w-xl p-10">
+        <div>
+          <h1 class="text-3xl font-bold text-left w-full mb-1">
+            Hi! I'm Madison
+          </h1>
+          <div class="flex text-md/8 mb-2">
+            Front-End Web Developer based in Cincinnati, Ohio.
+          </div>
+          <div
+            class="flex checkerboard-small rounded-md justify-center items-center mx-auto mb-8"
+          >
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <Image
+            src={aboutMeImage}
+            class="w-sm h-auto border-2 border-terra-cotta rounded-xl mb-5"
+            alt="A photo of me in front of Lake Michigan"
+          />
+        </div>
+        <div class="flex flex-col grow justify-around mt-5">
+          <div>
+            <h2 class="text-md font-bold mb-1">About</h2>
+            <p class="mb-3">
+              I am a self-taught programmer with a passion for front-end
+              development and design. I graduated from the University of
+              Cincinnati with a degree in fashion design which gives me a unique
+              perspective on combining creativity with technical
+              problem-solving. Beyond coding, I've run five half and one full
+              marathon, and enjoy traveling, reading, and cozy gaming in my free
+              time.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-md font-extrabold mb-">My Journey</h2>
+            <p class="mb-6">
+              I began my journey with The Odin Project, completing the
+              Foundations and JavaScript courses. Through this, I developed
+              personal projects and discovered my passion for front-end web
+              design. I am now eager to continue growing my skills and open to
+              opportunities that will help me advance my career and learning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="checkerboard-small"></div> -->
 
+  <div
+    class="checkerboard-large w-xs mx-auto flex items-center justify-center rounded-md shadow-lg mt-20 mb-5"
+  >
     <div
-      class="checkerboard-large w-xs mx-auto flex items-center justify-center rounded-md shadow-lg mt-20 mb-5"
+      class="bg-pale-pink flex items-center justify-center mx-auto text-xl py-1 px-8 h-[40px] w-xs mb-4 rounded-t-md font-bold"
+    >
+      Projects
+    </div>
+  </div>
+
+  <Projects client:load projects={projects} />
+
+  <div class="flex flex-col justify-center items-center my-15">
+    <div
+      class="checkerboard-large w-xs mx-auto flex items-center justify-center my-10 rounded-md shadow-lg"
     >
       <div
         class="bg-pale-pink flex items-center justify-center mx-auto text-xl py-1 px-8 h-[40px] w-xs mb-4 rounded-t-md font-bold"
       >
-        Projects
+        Skills
       </div>
     </div>
-
-    <Projects client:load projects={projects} />
-
-
-    <div class="flex flex-col justify-center items-center my-15 ">
-      <div
-        class="checkerboard-large w-xs mx-auto flex items-center justify-center my-10 rounded-md shadow-lg"
-      >
-        <div
-          class="bg-pale-pink flex items-center justify-center mx-auto text-xl py-1 px-8 h-[40px] w-xs mb-4 rounded-t-md font-bold"
-        >
-          Skills
-        </div>
-      </div>
-      <div class="flex flex-wrap justify-center items-center">
-        {
-          skills.map((p) => (
-            <Image
-              src={p.icon}
-              class="w-20 h-20 bg-pale-pink shadow-sm p-2 rounded-sm m-2"
-              alt={p.name}
-            />
-          ))
-        }
-      </div>
+    <div class="flex flex-wrap justify-center items-center">
+      {
+        skills.map((p) => (
+          <Image
+            src={p.icon}
+            class="w-20 h-20 bg-pale-pink shadow-sm p-2 rounded-sm m-2"
+            alt={p.name}
+          />
+        ))
+      }
     </div>
+  </div>
 
   <div class="flex flex-col pb-15">
     <div
@@ -204,14 +201,25 @@ const skills = [
       </div>
     </div>
     <div
-      class="bg-pale-pink flex flex-col gap-2 justify-center items-center p-4 mx-auto m-10 shadow-sm rounded-sm mb-10"
+      class="bg-pale-pink flex flex-col gap-2 justify-center items-center p-4 mx-auto mb-10 shadow-sm rounded-sm mb-10"
     >
       <p class="text-center">
         I would love to get in touch! Please reach out directly to my email.
       </p>
-      <div class="flex justify-center items-center ">
-        <Email size={25} stroke={1.5} />
-        <p class="ml-1 font-semibold">madisonnowo@gmail.com</p>
+      <div
+        id="email-copy"
+        class="relative flex justify-center items-center cursor-pointer group select-none"
+      >
+        <Copy size={25} stroke={1.5} />
+        <p class="ml-1 font-semibold hover:underline">madisonnowo@gmail.com</p>
+
+        <!-- Tooltip -->
+        <span
+          id="tooltip"
+          class="absolute top-full mt-6 px-2 py-1 rounded-md text-sm text-black bg-salmon opacity-0 group-hover:opacity-100 transition-all duration-200"
+        >
+          Click to copy
+        </span>
       </div>
     </div>
   </div>
@@ -272,3 +280,19 @@ const skills = [
     font-family: "fancy";
   }
 </style>
+
+<script>
+  const emailDiv = document.getElementById("email-copy");
+  const tooltip = document.getElementById("tooltip");
+
+  emailDiv.addEventListener("click", async () => {
+    await navigator.clipboard.writeText("madisonnowo@gmail.com");
+    tooltip.textContent = "Copied!";
+    tooltip.classList.add("bg-green-600");
+
+    setTimeout(() => {
+      tooltip.textContent = "Click to copy";
+      tooltip.classList.remove("bg-green-600");
+    }, 1500);
+  });
+</script>
