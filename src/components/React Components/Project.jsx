@@ -1,12 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { projects } from "../../pages/Data/projects.js";
 import github from "../images/SVG/github.svg";
 
-export default function Projects({}) {
+export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const modalRef = useRef(null);
+
+  // Close modal on Escape
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setSelectedProject(null);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  // Close modal on click outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setSelectedProject(null);
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [selectedProject]);
 
   return (
     <div className="flex flex-col justify-center items-center">
+      {/* Project Cards */}
       {projects.map((p) => (
         <div
           key={p.link}
@@ -47,7 +75,10 @@ export default function Projects({}) {
       {/* Modal */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl relative max-h-[90vh] m-5 flex flex-col">
+          <div
+            ref={modalRef}
+            className="bg-white rounded-lg shadow-lg w-full max-w-4xl relative max-h-[90vh] m-5 flex flex-col"
+          >
             {/* Header */}
             <div className="flex justify-between items-center rounded-lg p-5 border-b border-gray-100 sticky top-0 bg-white z-10">
               <h2 className="text-2xl font-bold">{selectedProject.title}</h2>
