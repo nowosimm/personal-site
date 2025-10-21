@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   site: 'https://nowosimm.github.io',
-  base: '/personal-site/',
+  base: '/',
   integrations: [
     react({
       experimentalDisableStreaming: true,
