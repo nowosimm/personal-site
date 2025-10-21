@@ -206,20 +206,20 @@ const skills = [
       <p class="text-center">
         I would love to get in touch! Please reach out directly to my email.
       </p>
-<div 
-  id="email-copy"
-  class="relative flex justify-center items-center cursor-pointer select-none"
->
-  <Copy size={25} stroke={1.5} />
-  <p class="ml-1 font-semibold hover:underline">madisonnowo@gmail.com</p>
+      <div
+        id="email-copy"
+        class="relative flex justify-center items-center cursor-pointer select-none"
+      >
+        <Copy size={25} stroke={1.5} />
+        <p class="ml-1 font-semibold hover:underline">madisonnowo@gmail.com</p>
 
-  <span
-    id="tooltip"
-    class="absolute top-full mt-10 px-2 py-1 rounded-md  bg-salmon opacity-0 pointer-events-none transition-all duration-300 shadow-md"
-  >
-    Copied!
-  </span>
-</div>
+        <span
+          id="tooltip"
+          class="absolute top-full mt-10 px-2 py-1 rounded-md bg-salmon text-sm opacity-0 pointer-events-none transition-all duration-300 shadow-md"
+        >
+          Copied!
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -279,7 +279,6 @@ const skills = [
     font-family: "fancy";
   }
 </style>
-
 
 <script>
   const emailDiv = document.getElementById("email-copy");
