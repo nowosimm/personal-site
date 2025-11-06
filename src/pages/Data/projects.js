@@ -4,6 +4,12 @@ import tailwind from "../../components/images/SVG/tailwind.svg";
 import node from "../../components/images/SVG/node.svg";
 import vite from "../../components/images/SVG/vite.png";
 import mongo from "../../components/images/SVG/mongo.svg";
+import astro from "../../components/images/SVG/astro.svg";
+
+// Website
+
+import website from "../../components/images/projectImages/website/website_view.png";
+import websiteView from "../../components/images/projectImages/website/website_cover.png";
 
 // Craft Tracker Images
 import craftView from "../../components/images/projectImages/craftTracker/craft_view.png";
@@ -64,6 +70,26 @@ import craftTracker from "../../components/images/projectImages/craftTracker/cra
 import mockBlog from "../../components/images/projectImages/mockBlog/mockBlog_cover.png";
 
 export const projects = [
+      {
+    id: "website",
+    link: "website",
+    image: website,
+    title: "Client Website",
+    description:
+      "Created a visually engaging and user-friendly website for a company, showcasing their full range of products and services. The site includes clear informational sections, organized product displays, and custom contact forms to enhance accessibility and communication.",
+    features: [
+      "Organized and presented the company's full range of offerings with clear, visually consistent layouts",
+      "Built custom forms to streamline customer inquiries and improve communication.",
+      "Ensured seamless performance and usability across desktop, tablet, and mobile devices.",
+    ],
+    takeaways:
+      "This was a great challenge in creating a mock social media platform and being able to experience how the web of schema information interacts with each element. I really enjoyed mapping out the user functionality of the site and feel pleased with my results. I think this app really put into perspective the never-ending tasks complex projects seems to have and how to go about breaking down tasks into smaller chunks rather than getting overwhelmed at the big picture.",
+    summary:
+      "Developed a responsive company website featuring detailed service information and integrated contact forms to improve client engagement.",
+    view: websiteView,
+    github: "https://github.com/nowosimm/greenspace",
+    technologies: [react, tailwind, astro],
+  },
   {
     id: "craft-tracker",
     link: "craft-tracker",
